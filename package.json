@@ -1,8 +1,8 @@
 {
-  "name": "narrative-notes",
+  "name": "comprehensive-assessment",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mountain-view-therapy.github.io/narrative-notes/",
+  "homepage": "https://mountain-view-therapy.github.io/comprehensive-assessment/",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",

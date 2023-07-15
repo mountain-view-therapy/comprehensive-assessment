@@ -101,7 +101,7 @@ const NoteContent = () => {
 
                 <Typography>Missing Fields</Typography>
                 <ul>
-                        <li>Start and End Time in <a href="/narrative-notes/#/meeting-logistics">Meeting Logistics tab</a></li>
+                        <li>Start and End Time in <a href="/comprehensive-assessment/#/meeting-logistics">Meeting Logistics tab</a></li>
                 </ul>
             </Box>
         )
