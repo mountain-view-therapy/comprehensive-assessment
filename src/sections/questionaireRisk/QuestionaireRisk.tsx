@@ -53,7 +53,7 @@ const QuestionaireRisk = () => {
         </Stack>
       </Box>
       <Stack flexDirection='column' spacing={5} paddingBottom={5}>
-        <Stack flexDirection='row' justifyContent='space-evenly'>
+        <Stack flexDirection='row' justifyContent='start' alignItems='center' gap={10}>
           <TextField label="Client's Initials" value={clientInitials} onChange={(e) => setClientInitials(e.target.value)} style={{ width: 200 }} />
 
           <Box width='50%'>
@@ -61,7 +61,7 @@ const QuestionaireRisk = () => {
               <DatePicker
                 label="Intake question review with client on"
                 value={intakeReviewDate}
-                onChange={(newValue) => setIntakeReviewDate(newValue || "")}
+                onChange={(newValue) => setIntakeReviewDate(new Date(newValue || "") || new Date())}
                 renderInput={(props) => <TextField {...props} />}
               />
             </LocalizationProvider>
@@ -141,15 +141,6 @@ const QuestionaireRisk = () => {
             }
           </Stack>
         </FormGroup>
-
-
-
-
-
-
-
-
-
       </Stack>
     </Container >
   )

@@ -21,9 +21,6 @@ const NoteContent = () => {
             dangerToSelfPlan,
             dangerToOthersPlan,
             otherRiskInformation,
-
-
-
         },
         mentalStatusExam: {
             cognitiveFunctioning,
@@ -32,14 +29,6 @@ const NoteContent = () => {
             interpersonal,
             functionalStatus,
 
-        },
-        problems,
-        symptoms: {
-            anxietySymptoms,
-            depressionSymptoms,
-            ptsdSymptoms,
-            otherSymptoms,
-            groupSymptomsTogether,
         },
         functioning: {
             selfCareAffected,
@@ -58,14 +47,9 @@ const NoteContent = () => {
             communitySymptoms,
             otherCommunitySymptoms,
         },
-        interventions,
-        otherInterventions,
         progressions,
         otherProgressions,
         identifiedProblem,
-        recommendationForMovingForward,
-        frequencyChangeExplanation,
-        nextMeeting,
     } } = useAppState()
 
     dayjs.extend(timeZonePlugin).locale('cs')
@@ -146,63 +130,8 @@ const NoteContent = () => {
                     </>
                 }
             </div>
-            {problems &&
-                <div>
-                    <div>
-                        <b>Issues discussed in this meeting include: </b>
-                    </div>
-                    <pre style={{ width: 504, whiteSpace: "pre-wrap", overflowWrap: "break-word", fontSize: 16, fontWeight: 400, fontFamily: 'sans-serif' }}>{problems}</pre>
-                </div>
-            }
-            {(anxietySymptoms.length || depressionSymptoms.length || ptsdSymptoms.length || otherSymptoms.length > 1 || otherSymptoms[0].length > 0) &&
-                <div>
-                    <b>Symptoms addressed during this meeting include: </b>
-                    <ul>
-                        {anxietySymptoms.length && groupSymptomsTogether ? (
-                            <li>Anxiety Symptoms<ul>
-                                {
-                                    anxietySymptoms.map(symptom => <li key={symptom}>{symptom}</li>)
-                                }
-                            </ul></li>
-                        )
-                            :
-                            anxietySymptoms.map(symptom => <li key={symptom}>{symptom}</li>)
-                        }
-                        {depressionSymptoms.length && groupSymptomsTogether ? (
-                            <li>Depression Symptoms<ul>
-                                {
-                                    depressionSymptoms.map(symptom => <li key={symptom}>{symptom}</li>)
-                                }
-                            </ul></li>
-                        )
-                            :
-                            depressionSymptoms.map(symptom => <li key={symptom}>{symptom}</li>)
-                        }
-                        {ptsdSymptoms.length && groupSymptomsTogether ? (
-                            <li>PTSD Symptoms<ul>
-                                {
-                                    ptsdSymptoms.map(symptom => <li key={symptom}>{symptom}</li>)
-                                }
-                            </ul></li>
-                        )
-                            :
-                            ptsdSymptoms.map(symptom => <li key={symptom}>{symptom}</li>)
-                        }
-                        {(otherSymptoms.length > 1 || otherSymptoms[0].length > 0) &&
-                           ( (otherSymptoms && groupSymptomsTogether) ? (
-                            <li>Other Symptoms<ul>
-                                {
-                                    otherSymptoms.map(symptom => <li key={symptom}>{symptom}</li>)
-                                }
-                            </ul></li>
-                        )
-                            :
-                            otherSymptoms.map(symptom => <li key={symptom}>{symptom}</li>)
 
-                        )}
-                    </ul>
-                </div>
-            }
+           
             {selfCareAffected &&
                 <p>
                     These symptoms affect {clientInitials || <b>Client's Initials</b>}'s self care.
@@ -238,18 +167,7 @@ const NoteContent = () => {
                     <span> {otherCommunitySymptoms} </span>
                 </p>
             }
-            {(interventions.length > 0 || otherInterventions.length > 0) &&
-                <b>In Meeting Interventions:</b>
-            }
-            {interventions.filter(i => i.checked).map(intervention => (
-                <p key={intervention.text}>{replaceText(intervention.text, intervention.replacementText)}</p>)
-            )
-            }
 
-            {otherInterventions.map(intervention => (
-                <p key={intervention}>{intervention}</p>)
-            )
-            }
 
             {(progressions.length > 0 || otherProgressions.length > 1 || otherProgressions[0].length > 0) &&
                 <b>Progress Towards Goals:</b>
@@ -260,11 +178,7 @@ const NoteContent = () => {
             {otherProgressions.map(progress => (
                 <p key={progress}>{progress}</p>
             ))}
-            <p><b>Recommendation For Moving Forward :</b> {recommendationForMovingForward}</p>
-            {nextMeeting &&
-                <p><b>Next meeting :</b> {new Date(nextMeeting).toLocaleString("en-US", { timeStyle: "full", dateStyle: "full" })}</p>
-            }
-            <pre style={{ width: 504, whiteSpace: "pre-wrap", overflowWrap: "break-word", fontSize: 16, fontWeight: 400, fontFamily: 'sans-serif' }}>{frequencyChangeExplanation}</pre>
+
 
         </div >
     )

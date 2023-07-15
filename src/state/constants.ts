@@ -74,53 +74,7 @@ export const riskLevels = [
 export type RiskLevels = typeof riskLevels[number]
 
 
-export const possibleAnxietySymptoms = [
-    "excessive worry that is difficult to control",
-    "constantly feeling on edge",
-    "restlessness",
-    "racing thoughts",
-    "insomnia",
-    "shortness of breath",
-    "heart palpitations",
-    "dry mouth",
-    "difficulty concentrating",
-    "trouble falling asleep",
-    "trouble staying asleep",
-    "general state of irritability",
-]
-export type PossibleAnxietySymptom = typeof possibleAnxietySymptoms[number]
 
-export const possibleDepressionSymptoms = [
-    "depressed mood",
-    "irritable mood",
-    "diminished interest or enjoyment in activities",
-    "sleeplessness",
-    "hypersomnia",
-    "fatigue/lack of energy",
-    "difficulty thinking or concentrating",
-    "indecisiveness",
-    "social withdrawal",
-    "feelings of hopelessness and worthlessness",
-    "feelings of inappropriate guilt",
-    "lack of appetite",
-    "recurrent suicidal ideation",
-]
-export type PossibleDepressionSymptom = typeof possibleDepressionSymptoms[number]
-
-export const possiblePTSDSymptoms = [
-    "intrusive thoughts or memories of the traumatic event",
-    "difficulty sleeping",
-    "nightmares",
-    "flashbacks",
-    "hypervigilance",
-    "difficulty concentrating",
-    "avoidance of reminders of the traumatic event",
-    "being easily startled",
-    "feelings of guilt/shame",
-    "feelings of hopelessness",
-    "intense distress when exposed to reminders of the traumatic event",
-]
-export type PossiblePTSDSymptom = typeof possiblePTSDSymptoms[number]
 
 export const possibleSelfCareSymptoms = [
     "[CLIENT] is getting inadequate sleep, only 5 hours per night",
@@ -163,52 +117,7 @@ export const possibleCommunitySymptoms = [
 ]
 export type PossibleCommunitySymptom = typeof possibleCommunitySymptoms[number]
 
-export const possibleInterventions = [
-    { section: "Deconstruction", text: "Used/promoted externalized language to give [CLIENT] space to take a position on their relationship with [PROBLEM]." },
-    { section: "Deconstruction", text: "Used deconstruction questions to help [CLIENT] name the issue, [PROBLEM]." },
-    { section: "Deconstruction", text: "Used deconstruction questions to help [CLIENT] describe the effects of [PROBLEM]." },
-    { section: "Deconstruction", text: "Used deconstruction questions to help [CLIENT] describe the tactics used by [PROBLEM]." },
-    { section: "Deconstruction", text: "Used deconstruction questions to help [CLIENT] explore the history of their relationship with [PROBLEM]." },
-    { section: "Deconstruction", text: "Helped [CLIENT] identify and describe cultural discourse and societal norms that may be supporting [PROBLEM]." },
-    { section: "Deconstruction", text: "Invited [CLIENT] to take a stance on their relationship with [PROBLEM]. Used deconstruction questions to help them richly describe their values and preferences that justify their stance." },
-    { section: "Deconstruction", text: "Used Narrative practice of double listening to identify unique outcomes and invite [CLIENT] to richly describe situations where [PROBLEM] has less influence. " },
-    { section: "Re-authoring", text: "Used Re-Authoring to invite [CLIENT] to richly describe their agency in evading [PROBLEM]’s influence." },
-    { section: "Re-authoring", text: "Used Narrative practice of Re-Authoring to invite [CLIENT] into preferred story development." },
-    {
-        section: "Re-authoring",
-        text: "Used Re-Authoring questions to identify a name for preferred narrative, [REPLACEMENT].",
-        prompt: "[key word or phrase for emerging preferred narrative]",
-    },
-    { section: "Re-authoring", text: "Used Re-Authoring questions to invite  [CLIENT] to describe their actions supporting their preferred narrative." },
-    { section: "Re-authoring", text: "Used Re-Authoring questions to invite [CLIENT] to identify people that support their preferred narrative." },
-    { section: "Re-authoring", text: "Used Re-Authoring questions to invite [CLIENT] to describe situations that support their preferred narrative." },
-    { section: "Re-authoring", text: "Used Re-Authoring questions to invite [CLIENT] to consider how their preferred narrative fits with their cultural context." },
-    { section: "Re-authoring", text: "Used Re-Authoring questions to invite [CLIENT] to describe past experiences that support their preferred narrative." },
-    { section: "Re-authoring", text: "Used Re-Authoring questions to invite [CLIENT] to make meaning of their life through the lens of their preferred narrative" },
-    { section: "Re-authoring", text: "Used Re-Authoring questions to invite [CLIENT] to imagine the possibilities of living their preferred narrative." },
-    { section: "Re-authoring", text: "Invited [CLIENT] to reflect on the juxtaposition between their preferred narrative and [PROBLEM]’s narrative." },
-    { section: "Remembering", text: "Used Narrative practice of Re-membering to help [CLIENT] to describe their relationship with people that support their preferred story." },
-    {
-        section: "Remembering",
-        text: "Used Narrative practice of Re-membering Conversations to invoke the presence/memory of [REPLACEMENT] to thicken their preferred narrative.",
-        prompt: "[name person “re-membered”]",
-    },
-    { section: "Remembering", text: "Use Narrative practice of Outsider-Witnessing to create circumsatnces where [CLIENT] can experience acknowledgment of/resonance with their experience." },
-    { section: "Behavioral", text: "Worked with [CLIENT] to cultivate strategies to counter [PROBLEM]'s influence." },
-    {
-        section: "Behavioral",
-        text: "Worked with [CLIENT] to develop a concrete preferred action plan in relation to [REPLACEMENT].",
-        prompt: "[specify activity of daily living or symptom]"
-    },
-    { section: "Behavioral", text: "Referred to resources to learn meditation/mindfulness. Incorporated the use of these skills in preferred story development." },
-    { section: "Administrative", text: "Referred [CLIENT] to physician for medical evaluation. " },
-    { section: "Administrative", text: "Reviewed intake paperwork, explained practice policies, HIPAA privacy policies and patient rights, insurance benefits and copay, and obtained informed consent for therapy." },
-    { section: "Administrative", text: "Reviewed Clinical Formulation" },
-    { section: "Administrative", text: "Reviewed Treatment Plan" },
-    { section: "Administrative", text: "Reviewed intake questionnaire" },
-    { section: "Administrative", text: "Started work on CANS assessment with [CLIENT] and parent. Will complete within 21 days." },
-    { section: "Administrative", text: "Completed CANS assessment" },
-]
+
 
 export const possibleProgressions = [
     {
@@ -310,20 +219,11 @@ export const possibleProgressions = [
 ]
 
 
-export const possibleRecommendationsForMovingForward = [
-    "N/A-This is the initial diagnostic meeting",
-    "Continue with current treatment plan",
-    "Update treatment plan",
-    "Discontinue therapy",
-]
-export type PossibleRecommendationsForMovingForward = typeof possibleRecommendationsForMovingForward[number]
-
-
 export const initialState = {
     meetingInformation: {
         questionaireRisk: {
             clientInitials: "",
-            intakeReviewDate:"",
+            intakeReviewDate: new Date(),
             commentOnIntakeQuestionare: "",
             noRisk: false,
             dangerToSelf: false,
@@ -336,9 +236,6 @@ export const initialState = {
             dangerToSelfPlan: "",
             dangerToOthersPlan: "",
             otherRiskInformation: "",
-
-
-
         },
         mentalStatusExam: {
             cognitiveFunctioning: "Oriented / Alert",
@@ -348,13 +245,28 @@ export const initialState = {
             functionalStatus: "Intact",
 
         },
-        problems: "",
-        symptoms: {
+        diagnostics: {
+            diagnoses: [],
             anxietySymptoms: [],
             depressionSymptoms: [],
             ptsdSymptoms: [],
-            otherSymptoms: [""],
+            otherSymptoms: [],
             groupSymptomsTogether: false,
+            selfCareAffected: false,
+            selfCareSymptoms: [],
+            otherSelfCareSymptoms: "",
+            occupationAffected: false,
+            occupationSymptoms: [],
+            otherOccupationSymptoms: "",
+            academicAffected: false,
+            academicSymptoms: [],
+            otherAcademicSymptoms: "",
+            interpersonalAffected: false,
+            interpersonalSymptoms: [],
+            otherInterpersonalSymptoms: "",
+            communitylAffected: false,
+            communitySymptoms: [],
+            otherCommunitySymptoms: "",
         },
         functioning: {
             selfCareAffected: false,
@@ -374,12 +286,68 @@ export const initialState = {
             otherCommunitySymptoms: "",
         },
         identifiedProblem: "",
-        recommendationForMovingForward: "Continue with current treatment plan",
-        frequencyChangeExplanation: "",
-        nextMeeting: "",
-        otherInterventions: [""],
         otherProgressions: [""],
 
     },
     currentTab: "/meeting-logstics",
 }
+
+export const possibleDiagnosis = [
+    "F41.1 Generalized Anxiety Disorder",
+    "F33.1 Major Depressive Disorder, recurrent, moderate",
+    "F43.10 Posttraumatic Stress Disorder",
+    "Other",
+]
+export type PossibleDiagnosis = typeof possibleDiagnosis[number]
+
+export const possibleSymptoms = {
+    "F41.1 Generalized Anxiety Disorder": [
+        "excessive worry that is difficult to control",
+        "constantly feeling on edge",
+        "restlessness",
+        "racing thoughts",
+        "insomnia",
+        "shortness of breath",
+        "heart palpitations",
+        "dry mouth",
+        "difficulty concentrating",
+        "trouble falling asleep",
+        "trouble staying asleep",
+        "general state of irritability",
+    ],
+
+    "F33.1 Major Depressive Disorder, recurrent, moderate": [
+        "depressed mood",
+        "irritable mood",
+        "diminished interest or enjoyment in activities",
+        "sleeplessness",
+        "hypersomnia",
+        "fatigue/lack of energy",
+        "difficulty thinking or concentrating",
+        "indecisiveness",
+        "social withdrawal",
+        "feelings of hopelessness and worthlessness",
+        "feelings of inappropriate guilt",
+        "lack of appetite",
+        "recurrent suicidal ideation",
+    ],
+    "F43.10 Posttraumatic Stress Disorder": [
+        "intrusive thoughts or memories of the traumatic event",
+        "difficulty sleeping",
+        "nightmares",
+        "flashbacks",
+        "hypervigilance",
+        "difficulty concentrating",
+        "avoidance of reminders of the traumatic event",
+        "being easily startled",
+        "feelings of guilt/shame",
+        "feelings of hopelessness",
+        "intense distress when exposed to reminders of the traumatic event",
+    ],
+}
+
+export type PossibleAnxietySymptom = typeof possibleSymptoms["F41.1 Generalized Anxiety Disorder"][number]
+export type PossibleDepressionSymptom = typeof possibleSymptoms["F33.1 Major Depressive Disorder, recurrent, moderate"][number]
+export type PossiblePTSDSymptom = typeof possibleSymptoms["F43.10 Posttraumatic Stress Disorder"][number]
+export type PossibleSymptom = PossibleAnxietySymptom | PossibleDepressionSymptom | PossiblePTSDSymptom
+

@@ -3,14 +3,11 @@ import { Container } from "@mui/system";
 import { useState } from "react";
 import { Routes, Route, Outlet, Link } from "react-router-dom";
 import Functioning from "./sections/functioning/Functioning";
-import Interventions from "./sections/interventions/Interventions";
 import QuestionaireRisk from "./sections/questionaireRisk/QuestionaireRisk";
 import MentalStatusExam from "./sections/mentalStatusExam/MentalStatusExam";
-import NextMeeting from "./sections/nextMeeting/NextMeeting";
 import Note from "./sections/note/Note";
-import Problems from "./sections/problems/Problems";
 import Progress from "./sections/progress/Progress";
-import Symptoms from "./sections/symptoms/Symptoms";
+import Diagnostic from "./sections/diagnostic/Diagnostic";
 
 function App() {
   return (
@@ -19,12 +16,9 @@ function App() {
         <Route index element={<QuestionaireRisk />} />
         <Route path="questionaire-risk" element={<QuestionaireRisk />} />
         <Route path="mental-status-exam" element={<MentalStatusExam />} />
-        <Route path="problems" element={<Problems />} />
-        <Route path="symptoms" element={<Symptoms />} />
+        <Route path="diagnostic" element={<Diagnostic />} />
         <Route path="functioning" element={<Functioning />} />
-        <Route path="interventions" element={<Interventions />} />
         <Route path="progress" element={<Progress />} />
-        <Route path="next-meeting" element={<NextMeeting />} />
         <Route path="*" element={<NoMatch />} />
       </Route>
     </Routes>
@@ -56,12 +50,11 @@ const Layout = () => {
                 >
                   <Tab
                     value='questionaire-risk'
-                    label="Questionaire/Risk"
+                    label="Questionaire"
                     component={Link}
                     to='questionaire-risk'
                     style={{ fontSize: '12px', color: 'white' }}
                   />
-
                   <Tab
                     value='mental-status-exam'
                     label="MSE/Risk"
@@ -70,19 +63,11 @@ const Layout = () => {
                     style={{ fontSize: '12px', color: 'white' }}
                   />
                   <Tab
-                    value='problems'
-                    label="Discussion"
+                    value='diagnostic'
+                    label="Diagnostic"
                     component={Link}
-                    to='problems'
+                    to='diagnostic'
                     style={{ fontSize: '12px', color: 'white' }}
-                  />
-                  <Tab
-                    value='symptoms'
-                    label="Symptoms"
-                    component={Link}
-                    to='symptoms'
-                    style={{ fontSize: '12px', color: 'white' }}
-
                   />
                   <Tab
                     value='functioning'
@@ -90,29 +75,12 @@ const Layout = () => {
                     component={Link}
                     to='functioning'
                     style={{ fontSize: '12px', color: 'white' }}
-
-                  />
-                  <Tab
-                    value='interventions'
-                    label="Interventions"
-                    component={Link}
-                    to='interventions'
-                    style={{ fontSize: '12px', color: 'white' }}
-
                   />
                   <Tab
                     value='progress'
                     label="Progress"
                     component={Link}
                     to='progress'
-                    style={{ fontSize: '12px', color: 'white' }}
-
-                  />
-                  <Tab
-                    value='next-meeting'
-                    label="Next Meeting"
-                    component={Link}
-                    to='next-meeting'
                     style={{ fontSize: '12px', color: 'white' }}
 
                   />

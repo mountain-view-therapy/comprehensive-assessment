@@ -19,7 +19,7 @@ const QuestionaireRiskModel = types.model('QuestionaireRiskodel', {
     dangerToOthersPlan: types.string,
     otherRiskInformation: types.string,
     commentOnIntakeQuestionare: types.string,
-    intakeReviewDate: types.string,
+    intakeReviewDate: types.Date,
 }).actions((self) => {
     return {
         setClientInitials(intitals: string): void {
@@ -28,7 +28,7 @@ const QuestionaireRiskModel = types.model('QuestionaireRiskodel', {
         setCommentOnIntakeQuestionaire(comment: string): void {
             self.commentOnIntakeQuestionare = comment
         },
-        setIntakeReviewDate(date: string): void {
+        setIntakeReviewDate(date: Date): void {
             self.intakeReviewDate = date;
         },
         setNoRisk(risk: boolean): void {
