@@ -1,29 +1,25 @@
-export const locationCodes = ["Home (Loc Code 10)", "Other (Loc Code 02)"]
-export type LocationCode = typeof locationCodes[number]
-
-export const possibleCptCodes = [
-    "90791 Diagnostic (50+ min)",
-    "90832 Individual (17-37 min)",
-    "90834 Individual (38-52 min)",
-    "90837 Individual (53+ min)",
-    "90847 Couples/Family with client present (45+ min)",
-    "90846 Family without client present (45+ min)",
-    "1111 Narrative Consulting (45 min)",
-    "Other",
-]
-export type PossibleCptCode = typeof possibleCptCodes[number]
 
 
-export const cognitiveFunctioningStates = [
-    "Oriented / Alert",
-    "Disorganized",
-    "Tangential",
-    "Preoccupied",
-    "Circumstantial",
+export const appearanceStates = [
+    "Typical",
+    "Disheveled",
+    "Emaciated",
+    "Poor Hygiene",
     "Not Assessed",
 ]
-export type CognitiveFunctioningState = typeof cognitiveFunctioningStates[number]
+export type AppearanceState = typeof appearanceStates[number]
 
+export const motorActivityStates = [
+    "Typical",
+    "Agitation",
+    "Retardation",
+    "Posturing",
+    "Repetitive Actions",
+    "Tics",
+    "Tremors",
+    "Not Assessed",
+]
+export type MotorActivityStates = typeof motorActivityStates[number]
 
 export const affectStates = [
     "Appropriate",
@@ -47,6 +43,63 @@ export const moodStates = [
 ]
 export type MoodStates = typeof moodStates[number]
 
+export const orientationStates = [
+    "X3: Oriented to person, place and time",
+    "X2: Oriented to person, place",
+    "X2: Oriented to person, time",
+    "X2: Oriented to time, place",
+    "X1: Oriented to person",
+    "X1: Oriented to place",
+    "X1: Oriented to time",
+    "X0: Not oriented to person, place and time",
+    "Not Assessed",
+]
+export type OrientationStates = typeof orientationStates[number]
+
+export const memoryStates = [
+    "Intact",
+    "Poor remote",
+    "Poor recent",
+    "Not Assessed",
+]
+export type MemoryStates = typeof memoryStates[number]
+
+export const attentionStates = [
+    "Good",
+    "Distractible",
+    "Variable",
+    "Not Assessed",
+]
+export type AttentionStates = typeof attentionStates[number]
+
+export const perceptionStates = [
+    "Typical",
+    "Auditory hallucinations",
+    "Tactile hallucinations",
+    "Visual hallucinations",
+    "Not Assessed",
+]
+export type PerceptionState = typeof perceptionStates[number]
+
+export const cognitiveFunctioningStates = [
+    "Oriented/Alert",
+    "Disorganized",
+    "Tangential",
+    "Preoccupied",
+    "Circumstantial",
+    "Not Assessed",
+]
+export type CognitiveFunctioningState = typeof cognitiveFunctioningStates[number]
+
+export const functionalStatusStates = [
+    "Intact",
+    "Impaired",
+    "Variably Impaired",
+    "Not Assessed",
+]
+export type FunctionalStatusStates = typeof interpersonalStates[number]
+
+
 
 export const interpersonalStates = [
     "Interactive",
@@ -58,13 +111,7 @@ export const interpersonalStates = [
 ]
 export type InterpersonalStates = typeof interpersonalStates[number]
 
-export const functionalStatusStates = [
-    "Intact",
-    "Impaired",
-    "Variably Impaired",
-    "Not Assessed",
-]
-export type FunctionalStatusStates = typeof interpersonalStates[number]
+
 
 export const riskLevels = [
     "Low",
@@ -341,11 +388,18 @@ export const initialState = {
 
         },
         mentalStatusExam: {
-            cognitiveFunctioning: "Oriented / Alert",
+            appearance:"Typical",
+            motorActivity: "Typical",
             affect: "Appropriate",
             mood: "Euthymic",
-            interpersonal: "Interactive",
+            orientation: "X3: Oriented to person, place and time",
+            memory: "Intact",
+            attention: "Good",
+            perception: "Typical",
+            cognitiveFunctioning: "Oriented/Alert",
             functionalStatus: "Intact",
+            interpersonal: "Interactive",
+
 
         },
         problems: "",

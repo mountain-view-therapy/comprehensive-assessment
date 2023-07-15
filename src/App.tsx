@@ -64,7 +64,7 @@ const Layout = () => {
 
                   <Tab
                     value='mental-status-exam'
-                    label="MSE/Risk"
+                    label="MSE"
                     component={Link}
                     to='mental-status-exam'
                     style={{ fontSize: '12px', color: 'white' }}
