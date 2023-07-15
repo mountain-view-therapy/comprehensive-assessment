@@ -12,7 +12,7 @@ import { useAppState } from '../../state/provider';
 
 const Functioning = () => {
   const { meetingInformation: {
-    meetingLogistics: {
+    questionaireRisk: {
       clientInitials,
       setClientInitials,
     },

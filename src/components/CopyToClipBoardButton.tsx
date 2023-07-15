@@ -9,12 +9,6 @@ import { useAppState } from '../state/provider';
 const turndownService = new TurndownService()
 
 const CopyToClipboardButton = () => {
-    const { meetingInformation: {
-        meetingLogistics: {
-            startTime,
-            endTime,
-        }
-    } } = useAppState();
 
     const [open, setOpen] = useState(false)
 
@@ -30,7 +24,6 @@ const CopyToClipboardButton = () => {
             <Button
                 variant='contained'
                 onClick={handleClick}
-                disabled={!startTime || !endTime}
                 >
                 Copy Note
             </Button>

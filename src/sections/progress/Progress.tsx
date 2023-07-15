@@ -8,7 +8,7 @@ import { useAppState } from '../../state/provider';
 const Progress = () => {
   const {
     meetingInformation: {
-      meetingLogistics: {
+      questionaireRisk: {
         clientInitials,
         setClientInitials,
       },

@@ -8,7 +8,7 @@ import { useAppState } from '../../state/provider';
 const Interventions = () => {
   const {
     meetingInformation: {
-      meetingLogistics: {
+      questionaireRisk: {
         clientInitials,
         setClientInitials,
       },

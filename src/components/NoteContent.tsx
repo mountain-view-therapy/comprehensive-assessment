@@ -8,35 +8,8 @@ import { useAppState } from "../state/provider"
 const NoteContent = () => {
 
     const { meetingInformation: {
-        meetingLogistics: {
+        questionaireRisk: {
             clientInitials,
-            telehealthPlatform,
-            telehealthAppropriate,
-            telehealthConsent,
-            startTime,
-            endTime,
-            cptCode,
-            otherCptCode,
-            clientPresent,
-            spouseName,
-            spousePresent,
-            partnerName,
-            partnerPresent,
-            parentName,
-            parentPresent,
-            siblingName,
-            siblingPresent,
-            childName,
-            childPresent,
-            otherName,
-            otherPresent,
-        },
-        mentalStatusExam: {
-            cognitiveFunctioning,
-            affect,
-            mood,
-            interpersonal,
-            functionalStatus,
             noRisk,
             dangerToSelf,
             dangerToOthers,
@@ -48,6 +21,17 @@ const NoteContent = () => {
             dangerToSelfPlan,
             dangerToOthersPlan,
             otherRiskInformation,
+
+
+
+        },
+        mentalStatusExam: {
+            cognitiveFunctioning,
+            affect,
+            mood,
+            interpersonal,
+            functionalStatus,
+
         },
         problems,
         symptoms: {
@@ -94,59 +78,8 @@ const NoteContent = () => {
         return text.replace('[CLIENT]', clientInitials)
     }
 
-    if (endTime === startTime) {
-        return (
-            <Box>
-                <Typography>Please fill out all necessary fields</Typography>
-
-                <Typography>Missing Fields</Typography>
-                <ul>
-                        <li>Start and End Time in <a href="/comprehensive-assessment/#/meeting-logistics">Meeting Logistics tab</a></li>
-                </ul>
-            </Box>
-        )
-    }
-
     return (
         <div>
-            <div>
-                <b>HIPAA Compliant telehealth platform: </b>
-                {telehealthPlatform}
-            </div>
-            <div>
-                <b>Is person-served appropriate for telehealth? </b>
-                {telehealthAppropriate}
-            </div>
-            <div>
-                <b>Did you receive consent for telehealth meetings? </b>
-                {telehealthConsent}
-            </div>
-
-            <div>
-                <b>Start Time: </b>
-                {startTime}
-            </div>
-            <div>
-                <b>End Time: </b>
-                {endTime}
-            </div>
-            <div>
-                <b>CPT Code: </b>
-                {cptCode === 'Other' ? otherCptCode : cptCode}
-            </div>
-            <div>
-                <b>Persons Present: </b>
-                <ul>
-                    {clientPresent && <li>Client</li>}
-                    {spousePresent && <li>Spouse: {spouseName}</li>}
-                    {partnerPresent && <li>Partner: {partnerName}</li>}
-                    {parentPresent && <li>Parent: {parentName}</li>}
-                    {siblingPresent && <li>Silbling: {siblingName}</li>}
-                    {childPresent && <li>Child: {childName}</li>}
-                    {otherPresent && <li>Other: {otherName}</li>}
-                </ul>
-            </div>
-
             <div><b>Mental Status Exam</b>
                 <ul>
                     {cognitiveFunctioning &&

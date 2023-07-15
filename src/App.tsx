@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Routes, Route, Outlet, Link } from "react-router-dom";
 import Functioning from "./sections/functioning/Functioning";
 import Interventions from "./sections/interventions/Interventions";
-import MeetingLogistics from "./sections/meetingLogistics/MeetingLogistics";
+import QuestionaireRisk from "./sections/questionaireRisk/QuestionaireRisk";
 import MentalStatusExam from "./sections/mentalStatusExam/MentalStatusExam";
 import NextMeeting from "./sections/nextMeeting/NextMeeting";
 import Note from "./sections/note/Note";
@@ -16,8 +16,8 @@ function App() {
   return (
     <Routes>
       <Route path='/' element={<Layout />}>
-        <Route index element={<MeetingLogistics />} />
-        <Route path="meeting-logistics" element={<MeetingLogistics />} />
+        <Route index element={<QuestionaireRisk />} />
+        <Route path="questionaire-risk" element={<QuestionaireRisk />} />
         <Route path="mental-status-exam" element={<MentalStatusExam />} />
         <Route path="problems" element={<Problems />} />
         <Route path="symptoms" element={<Symptoms />} />
@@ -32,7 +32,7 @@ function App() {
 }
 
 const Layout = () => {
-  const [currentTab, setCurrentTab] = useState('meeting-logistics')
+  const [currentTab, setCurrentTab] = useState('questionaire-risk')
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setCurrentTab(newValue)
@@ -55,10 +55,10 @@ const Layout = () => {
                   TabIndicatorProps={{ style: { background: 'white' } }}
                 >
                   <Tab
-                    value='meeting-logistics'
-                    label="Meeting Logistics"
+                    value='questionaire-risk'
+                    label="Questionaire/Risk"
                     component={Link}
-                    to='meeting-logistics'
+                    to='questionaire-risk'
                     style={{ fontSize: '12px', color: 'white' }}
                   />
 
@@ -139,7 +139,7 @@ const NoMatch = () => {
     <div>
       <h2>Nothing to see here!</h2>
       <p>
-        <Link to={'/meeting-logistics'}>Go to the home page</Link>
+        <Link to={'/questionaire-risk'}>Go to the home page</Link>
       </p>
     </div >
   );

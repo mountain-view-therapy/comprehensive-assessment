@@ -7,14 +7,14 @@ import {
 } from "../state/constants"
 import FunctioningModel from "./Functioning.mst"
 import InterventionModel from "./InterventionModel.mst"
-import MeetingLogisticsModel from "./MeetingLogisticsModel.mst"
+import QuestionaireRiskModel from "./QuestionaireRiskModel.mst"
 import MentalStatusExamModel from "./MentalStatusExamModel.mst"
 import ProgressModel from "./ProgressModel.mst"
 import SymptomsModel from "./SymptomsModel.mst"
 
 
 const MeetingInformationModel = types.model('MeetingInformationModel', {
-    meetingLogistics: MeetingLogisticsModel,
+    questionaireRisk: QuestionaireRiskModel,
     mentalStatusExam: MentalStatusExamModel,
     problems: types.string,
     symptoms: SymptomsModel,

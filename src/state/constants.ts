@@ -321,36 +321,10 @@ export type PossibleRecommendationsForMovingForward = typeof possibleRecommendat
 
 export const initialState = {
     meetingInformation: {
-        meetingLogistics: {
+        questionaireRisk: {
             clientInitials: "",
-            telehealthPlatform: "Simple Practice",
-            telehealthAppropriate: "Yes",
-            telehealthConsent: "Yes",
-            otherAddress: "",
-            startTime: "12:00 AM",
-            endTime: "12:00 AM",
-            cptCode: "90837 Individual (53+ min)",
-            otherCptCode: "",
-            clientPresent: true,
-            spousePresent: false,
-            partnerPresent: false,
-            parentPresent: false,
-            siblingPresent: false,
-            childPresent: false,
-            otherPresent: false,
-            spouseName: "",
-            partnerName: "",
-            parentName: "",
-            siblingName: "",
-            childName: "",
-            otherName: "",
-        },
-        mentalStatusExam: {
-            cognitiveFunctioning: "Oriented / Alert",
-            affect: "Appropriate",
-            mood: "Euthymic",
-            interpersonal: "Interactive",
-            functionalStatus: "Intact",
+            intakeReviewDate:"",
+            commentOnIntakeQuestionare: "",
             noRisk: false,
             dangerToSelf: false,
             dangerToOthers: false,
@@ -362,6 +336,17 @@ export const initialState = {
             dangerToSelfPlan: "",
             dangerToOthersPlan: "",
             otherRiskInformation: "",
+
+
+
+        },
+        mentalStatusExam: {
+            cognitiveFunctioning: "Oriented / Alert",
+            affect: "Appropriate",
+            mood: "Euthymic",
+            interpersonal: "Interactive",
+            functionalStatus: "Intact",
+
         },
         problems: "",
         symptoms: {
