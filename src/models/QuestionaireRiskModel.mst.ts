@@ -1,9 +1,5 @@
 import { Instance, types } from "mobx-state-tree"
-import {
-    PossibleCptCode,
-    possibleCptCodes,
-    RiskLevels
-} from "../state/constants"
+import { RiskLevels } from "../state/constants"
 
 const QuestionaireRiskModel = types.model('QuestionaireRiskodel', {
     clientInitials: types.string,
