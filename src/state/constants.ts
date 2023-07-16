@@ -44,13 +44,13 @@ export const moodStates = [
 export type MoodStates = typeof moodStates[number]
 
 export const orientationStates = [
-    "X3: Oriented to person, place and time",
-    "X2: Oriented to person, place",
-    "X2: Oriented to person, time",
-    "X2: Oriented to time, place",
-    "X1: Oriented to person",
-    "X1: Oriented to place",
-    "X1: Oriented to time",
+    "X3: person, place and time",
+    "X2: person, place",
+    "X2: person, time",
+    "X2: time, place",
+    "X1: person",
+    "X1: place",
+    "X1: time",
     "X0: Not oriented to person, place and time",
     "Not Assessed",
 ]
@@ -289,7 +289,7 @@ export const initialState = {
             motorActivity: "Typical",
             affect: "Appropriate",
             mood: "Euthymic",
-            orientation: "X3: Oriented to person, place and time",
+            orientation: "X3:person, place and time",
             memory: "Intact",
             attention: "Good",
             perception: "Typical",
@@ -405,3 +405,59 @@ export type PossibleDepressionSymptom = typeof possibleSymptoms["F33.1 Major Dep
 export type PossiblePTSDSymptom = typeof possibleSymptoms["F43.10 Posttraumatic Stress Disorder"][number]
 export type PossibleSymptom = PossibleAnxietySymptom | PossibleDepressionSymptom | PossiblePTSDSymptom
 
+export const formulation = [
+    {
+        text: "[CLIENT] is a [REPLACEMENT1] years old [REPLACEMENT2] [REPLACEMENT3] living in [REPLACEMENT4] with [PRONOUN][REPLACEMENT5].,
+            "age",
+            "race",
+            "gender",
+            "city, state",
+            "list other's living in the home"
+    
+        ]
+    },
+    {
+        text: " [CLIENT] came to us wanting to change [PRONOUN] relationship with [ISSUE], specifically how it was affecting [REPLACEMENT1].",
+        prompt: [
+            "experience near description of how problem is effecting life",
+          
+        ]
+    },
+    {
+        text: "[ISSUE] has [CLIENT] thinking that [PRONOUN] [REPLACEMENT1].",
+        prompt: [
+            "what does the problem have the person served thinking about themself",
+          
+        ]
+    },
+    {
+        text: "[CLIENT] is [REPLACEMENT1] with the story being promoted by [ISSUE].",
+        prompt: [
+            "ok, not ok",
+          
+        ]
+    },
+    {
+        text: "[CLIENT] hopes to come up with ways to counter the ideas [ISSUE] is promoting.",
+       
+    },
+    {
+        text: "[CLIENT] has a history with [ISSUE] so has developed strategies to help counter its effects including:[REPLACEMENT1].",
+        prompt: [
+            "list knowledges/stratgies that will help counter problem",
+          
+        ]
+    },
+    {
+        text: "[CLIENT] has [REPLACEMENT1] to help [PRONOUN] stand up to [ISSUE]’s effects. ",
+        prompt: [
+            "list social supports",
+          
+        ]
+    },
+    {
+        text: "In our work together we hope to look into the possible different stories about [CLIENT] and [ISSUE] by using narrative practice of problem deconstruction and alternative story development. We might also explore cultural discourse affecting [PRONOUN] relationship with [ISSUE]. [CLIENT] seems committed to having a more preferred relationship with [ISSUE] to reduce the effect in [PRONOUN] life.",
+
+    },
+    
+]
