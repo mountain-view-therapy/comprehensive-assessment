@@ -7,7 +7,7 @@ import { useAppState } from '../../state/provider';
 
 
 const Diagnostic = () => {
-  const { meetingInformation: {
+  const { comprehensiveAssessment: {
     diagnostics: {
       diagnoses,
       addNewDiagnosis,

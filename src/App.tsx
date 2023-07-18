@@ -6,7 +6,7 @@ import Functioning from "./sections/functioning/Functioning";
 import QuestionaireRisk from "./sections/questionaireRisk/QuestionaireRisk";
 import MentalStatusExam from "./sections/mentalStatusExam/MentalStatusExam";
 import Note from "./sections/note/Note";
-import Progress from "./sections/progress/Progress";
+import Formulation from "./sections/formulation/Formulation";
 import Diagnostic from "./sections/diagnostic/Diagnostic";
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
         <Route path="mental-status-exam" element={<MentalStatusExam />} />
         <Route path="diagnostic" element={<Diagnostic />} />
         <Route path="functioning" element={<Functioning />} />
-        <Route path="progress" element={<Progress />} />
+        <Route path="formulation" element={<Formulation />} />
         <Route path="*" element={<NoMatch />} />
       </Route>
     </Routes>
@@ -77,10 +77,10 @@ const Layout = () => {
                     style={{ fontSize: '12px', color: 'white' }}
                   />
                   <Tab
-                    value='progress'
-                    label="Progress"
+                    value='formulation'
+                    label="Formulation"
                     component={Link}
-                    to='progress'
+                    to='formulation'
                     style={{ fontSize: '12px', color: 'white' }}
 
                   />

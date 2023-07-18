@@ -1,4 +1,4 @@
-import { Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel, NativeSelect, Radio, RadioGroup, TextField, Typography } from '@mui/material'
+import { Checkbox, FormControlLabel, FormGroup, Radio, RadioGroup, TextField, Typography } from '@mui/material'
 import { Box, Container, Stack } from '@mui/system';
 import { observer } from 'mobx-react-lite';
 import { useAppState } from '../../state/provider';
@@ -9,9 +9,8 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 const QuestionaireRisk = () => {
-  const { meetingInformation: {
+  const { comprehensiveAssessment: {
     questionaireRisk: {
-      clientInitials,
       intakeReviewDate,
       commentOnIntakeQuestionare,
       noRisk,
@@ -26,7 +25,6 @@ const QuestionaireRisk = () => {
       otherRisk,
       otherRiskInformation,
 
-      setClientInitials,
       setIntakeReviewDate,
       setCommentOnIntakeQuestionaire,
       setNoRisk,
@@ -41,6 +39,8 @@ const QuestionaireRisk = () => {
       setDangerToOthersPlan,
       setOtherRiskInformation,
     },
+    clientInitials,
+    setClientInitials,
   }
   } = useAppState();
 

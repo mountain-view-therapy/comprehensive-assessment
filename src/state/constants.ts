@@ -1,3 +1,4 @@
+import FormulationModel from "../models/FormulationModel.mst"
 
 
 export const appearanceStates = [
@@ -164,188 +165,6 @@ export const possibleCommunitySymptoms = [
 ]
 export type PossibleCommunitySymptom = typeof possibleCommunitySymptoms[number]
 
-
-
-export const possibleProgressions = [
-    {
-        text: "[CLIENT] has maintained current level of functioning in relation to [PROBLEM]’s influence.",
-    },
-    { text: "[CLIENT] consistently speaks about [PROBLEM] in externalized language during therapy meetings.", },
-    {
-        text: "[CLIENT] identified and verbalized an experience-near name for the problem, [REPLACEMENT].",
-        prompt: "[state name]",
-    },
-    {
-        text: "[CLIENT] described the effects of [PROBLEM] including [REPLACEMENT]",
-        prompt: "[list effects identified]",
-    },
-    {
-        text: "[CLIENT] described tactics used by [PROBLEM] including [REPLACEMENT]",
-        prompt: "[list tactics identified]"
-    },
-    {
-        text: "[CLIENT] described past experiences that support or sustain the problematic relationship with [PROBLEM] including [REPLACEMENT]",
-        prompt: "[name experiences]",
-    },
-    {
-        text: "[CLIENT] identified people that support or sustain the problematic relationship with [PROBLEM] including [REPLACEMENT]",
-        prompt: "[name people]",
-    },
-    {
-        text: "[CLIENT] described situations that support or sustain the problematic relationship with [PROBLEM] including [REPLACEMENT]",
-        prompt: "[name situations]",
-    },
-    {
-        text: "[CLIENT] described cultural discourses that support and sustain their relationship with [PROBLEM] including [REPLACEMENT]",
-        prompt: "[name discourses]",
-    },
-    {
-        text: "[CLIENT] named and richly described  their values/preferences in relationship to [PROBLEM] including [REPLACEMENT]",
-        prompt: "[name values/preferences]",
-    },
-    {
-        text: "[CLIENT] named and richly described strategies that counter [PROBLEM] including [REPLACEMENT]",
-        prompt: "[list strategies]"
-    },
-    {
-        text: "[CLIENT] practiced strategies that counter [PROBLEM] including [REPLACEMENT]",
-        prompt: "[list strategies]"
-    },
-    {
-        text: "[CLIENT] named and richly described times when [PROBLEM] had less influence including [REPLACEMENT]",
-        prompt: "[name times when problem had less influence]"
-    },
-    {
-        text: "[CLIENT] described actions they have taken to support their preferred narrative including [REPLACEMENT]",
-        prompt: "[list actions]",
-    },
-    {
-        text: "[CLIENT] described situations that support their preferred narrative including [REPLACEMENT]",
-        prompt: "[list situations]",
-    },
-    {
-        text: "[CLIENT] identified [REPLACEMENT] as a person who will support their preferred narrative.",
-        prompt: "[name person]",
-    },
-    {
-        text: "[CLIENT] identified [REPLACEMENT] as people who will support their preferred narrative.",
-        prompt: "[name group of people]",
-    },
-    {
-        text: "[CLIENT] described past experiences that support their preferred narrative including [REPLACEMENT]",
-        prompt: "[list experiences]",
-    },
-    {
-        text: "[CLIENT] considered how their preferred narrative fits their cultural context ([REPLACEMENT]).",
-        prompt: "[name discouses discussed]",
-    },
-    { text: "[CLIENT] named and richly described their preferred narrative incorporating their stated values and preferences." },
-    {
-        text: "[CLIENT] reported the were able to counter [PROBLEM] by [REPLACEMENT].",
-        prompt: "[how where they able to counter the problem?]",
-    },
-    {
-        text: "[CLIENT] connected with [REPLACEMENT] to help support their preferred narrative.",
-        prompt: "[name person/people]."
-    },
-    {
-        text: "[CLIENT] learned and implemented behavioral strategies to exert acute control over relationship with [PROBLEM] including [REPLACEMENT]",
-        prompt: "[list strategies].",
-    },
-    {
-        text: "[CLIENT] spent shared accounts of living their preferred story including [REPLACEMENT]",
-        prompt: "[accounts of living their preferred story].",
-    },
-    {
-        text: "[CLIENT] consistently spoke about themselves through the lens of their preferred story.",
-    },
-    {
-        text: "[CLIENT] reported a connection to their preferred stories as a means to decrease [PROBLEM]’s influence.",
-    },
-
-]
-
-
-export const initialState = {
-    meetingInformation: {
-        questionaireRisk: {
-            clientInitials: "",
-            intakeReviewDate: new Date(),
-            commentOnIntakeQuestionare: "",
-            noRisk: false,
-            dangerToSelf: false,
-            dangerToOthers: false,
-            otherRisk: false,
-            dangerToSelfRisk: "Low",
-            dangerToOthersRisk: "Low",
-            dangerToSelfEvidence: "",
-            dangerToOthersEvidence: "",
-            dangerToSelfPlan: "",
-            dangerToOthersPlan: "",
-            otherRiskInformation: "",
-        },
-        mentalStatusExam: {
-            appearance:"Typical",
-            motorActivity: "Typical",
-            affect: "Appropriate",
-            mood: "Euthymic",
-            orientation: "X3:person, place and time",
-            memory: "Intact",
-            attention: "Good",
-            perception: "Typical",
-            cognitiveFunctioning: "Oriented/Alert",
-            functionalStatus: "Intact",
-            interpersonal: "Interactive",
-
-
-        },
-        diagnostics: {
-            diagnoses: [],
-            anxietySymptoms: [],
-            depressionSymptoms: [],
-            ptsdSymptoms: [],
-            otherSymptoms: [],
-            groupSymptomsTogether: false,
-            selfCareAffected: false,
-            selfCareSymptoms: [],
-            otherSelfCareSymptoms: "",
-            occupationAffected: false,
-            occupationSymptoms: [],
-            otherOccupationSymptoms: "",
-            academicAffected: false,
-            academicSymptoms: [],
-            otherAcademicSymptoms: "",
-            interpersonalAffected: false,
-            interpersonalSymptoms: [],
-            otherInterpersonalSymptoms: "",
-            communitylAffected: false,
-            communitySymptoms: [],
-            otherCommunitySymptoms: "",
-        },
-        functioning: {
-            selfCareAffected: false,
-            selfCareSymptoms: [],
-            otherSelfCareSymptoms: "",
-            occupationAffected: false,
-            occupationSymptoms: [],
-            otherOccupationSymptoms: "",
-            academicAffected: false,
-            academicSymptoms: [],
-            otherAcademicSymptoms: "",
-            interpersonalAffected: false,
-            interpersonalSymptoms: [],
-            otherInterpersonalSymptoms: "",
-            communitylAffected: false,
-            communitySymptoms: [],
-            otherCommunitySymptoms: "",
-        },
-        identifiedProblem: "",
-        otherProgressions: [""],
-
-    },
-    currentTab: "/meeting-logstics",
-}
-
 export const possibleDiagnosis = [
     "F41.1 Generalized Anxiety Disorder",
     "F33.1 Major Depressive Disorder, recurrent, moderate",
@@ -405,59 +224,163 @@ export type PossibleDepressionSymptom = typeof possibleSymptoms["F33.1 Major Dep
 export type PossiblePTSDSymptom = typeof possibleSymptoms["F43.10 Posttraumatic Stress Disorder"][number]
 export type PossibleSymptom = PossibleAnxietySymptom | PossibleDepressionSymptom | PossiblePTSDSymptom
 
-export const formulation = [
-    {
-        text: "[CLIENT] is a [REPLACEMENT1] years old [REPLACEMENT2] [REPLACEMENT3] living in [REPLACEMENT4] with [PRONOUN][REPLACEMENT5].,
-            "age",
-            "race",
-            "gender",
-            "city, state",
-            "list other's living in the home"
-    
-        ]
-    },
-    {
-        text: " [CLIENT] came to us wanting to change [PRONOUN] relationship with [ISSUE], specifically how it was affecting [REPLACEMENT1].",
-        prompt: [
-            "experience near description of how problem is effecting life",
-          
-        ]
-    },
-    {
-        text: "[ISSUE] has [CLIENT] thinking that [PRONOUN] [REPLACEMENT1].",
-        prompt: [
-            "what does the problem have the person served thinking about themself",
-          
-        ]
-    },
-    {
-        text: "[CLIENT] is [REPLACEMENT1] with the story being promoted by [ISSUE].",
-        prompt: [
-            "ok, not ok",
-          
-        ]
-    },
-    {
-        text: "[CLIENT] hopes to come up with ways to counter the ideas [ISSUE] is promoting.",
-       
-    },
-    {
-        text: "[CLIENT] has a history with [ISSUE] so has developed strategies to help counter its effects including:[REPLACEMENT1].",
-        prompt: [
-            "list knowledges/stratgies that will help counter problem",
-          
-        ]
-    },
-    {
-        text: "[CLIENT] has [REPLACEMENT1] to help [PRONOUN] stand up to [ISSUE]’s effects. ",
-        prompt: [
-            "list social supports",
-          
-        ]
-    },
-    {
-        text: "In our work together we hope to look into the possible different stories about [CLIENT] and [ISSUE] by using narrative practice of problem deconstruction and alternative story development. We might also explore cultural discourse affecting [PRONOUN] relationship with [ISSUE]. [CLIENT] seems committed to having a more preferred relationship with [ISSUE] to reduce the effect in [PRONOUN] life.",
+export const possibleFormulations = [
+[
+    {type: "CLIENT"},
+    {type: "TEXT", text: "is a"},
+    {type: "REPLACEMENT", prompt: "age", index: 0},
+    {type: "TEXT", text: "years old"},
+    {type: "REPLACEMENT", prompt: "race", index: 1},
+    {type: "REPLACEMENT", prompt: "gender", index: 2},
+    {type: "TEXT", text: "living in"},
+    {type: "REPLACEMENT", prompt: "city, state", index: 3},
+    {type: "TEXT", text: "with"},
+    {type: "PRONOUN"},
+    {type: "REPLACEMENT", prompt: "list other's living in the home", index: 4},
+    {type: "TEXT", text: "."},
 
-    },
-    
+],
+[
+    {type: "CLIENT"},
+    {type: "TEXT", text: "came to us wanting to change"},
+    {type: "PRONOUN"},
+    {type: "TEXT", text: "relationship with"},
+    {type: "ISSUE"},
+    {type: "TEXT", text: ", specifically how it was affecting"},
+    {type: "REPLACEMENT", prompt: "age", index: 0},
+],
+[
+    {type: "ISSUE"},
+    {type: "TEXT", text: "has"},
+    {type: "CLIENT"},
+    {type: "TEXT", text: "thinking that"},
+    {type: "PRONOUN"},
+    {type: "REPLACEMENT", prompt: "age", index: 0},
+
+
+    {type: "TEXT", text: "relationship with"},
+    {type: "TEXT", text: ", specifically how it was affecting"},
+    {type: "REPLACEMENT", prompt: "what does the problem have the person served thinking about themself", index: 0},
+],
+[
+    {type: "CLIENT"},
+    {type: "TEXT", text: "is"},
+    {type: "REPLACEMENT", prompt: "ok, not ok", index: 0},
+    {type: "TEXT", text: "with the story being promoted by"},
+    {type: "ISSUE"},
+
+],
+
 ]
+    
+
+
+    // {
+    //     text: "[CLIENT] hopes to come up with ways to counter the ideas [ISSUE] is promoting.",
+    // },
+    // {
+    //     text: "[CLIENT] has a history with [ISSUE] so has developed strategies to help counter its effects including:[REPLACEMENT1].",
+    //     prompt: [
+    //         "list knowledges/stratgies that will help counter problem",
+    //     ]
+    // },
+    // {
+    //     text: "[CLIENT] has [REPLACEMENT1] to help [PRONOUN] stand up to [ISSUE]’s effects. ",
+    //     prompt: [
+    //         "list social supports",
+    //     ]
+    // },
+    // {
+    //     text: "In our work together we hope to look into the possible different stories about [CLIENT] and [ISSUE] by using narrative practice of problem deconstruction and alternative story development. We might also explore cultural discourse affecting [PRONOUN] relationship with [ISSUE]. [CLIENT] seems committed to having a more preferred relationship with [ISSUE] to reduce the effect in [PRONOUN] life.",
+    // },
+
+
+export const initialState = {
+    comprehensiveAssessment: {
+        questionaireRisk: {
+            intakeReviewDate: new Date(),
+            commentOnIntakeQuestionare: "",
+            noRisk: false,
+            dangerToSelf: false,
+            dangerToOthers: false,
+            otherRisk: false,
+            dangerToSelfRisk: "Low",
+            dangerToOthersRisk: "Low",
+            dangerToSelfEvidence: "",
+            dangerToOthersEvidence: "",
+            dangerToSelfPlan: "",
+            dangerToOthersPlan: "",
+            otherRiskInformation: "",
+        },
+        mentalStatusExam: {
+            appearance:"Typical",
+            motorActivity: "Typical",
+            affect: "Appropriate",
+            mood: "Euthymic",
+            orientation: "X3: person, place and time",
+            memory: "Intact",
+            attention: "Good",
+            perception: "Typical",
+            cognitiveFunctioning: "Oriented/Alert",
+            functionalStatus: "Intact",
+            interpersonal: "Interactive",
+
+
+        },
+        diagnostics: {
+            diagnoses: [],
+            anxietySymptoms: [],
+            depressionSymptoms: [],
+            ptsdSymptoms: [],
+            otherSymptoms: [],
+            groupSymptomsTogether: false,
+            selfCareAffected: false,
+            selfCareSymptoms: [],
+            otherSelfCareSymptoms: "",
+            occupationAffected: false,
+            occupationSymptoms: [],
+            otherOccupationSymptoms: "",
+            academicAffected: false,
+            academicSymptoms: [],
+            otherAcademicSymptoms: "",
+            interpersonalAffected: false,
+            interpersonalSymptoms: [],
+            otherInterpersonalSymptoms: "",
+            communitylAffected: false,
+            communitySymptoms: [],
+            otherCommunitySymptoms: "",
+        },
+        functioning: {
+            selfCareAffected: false,
+            selfCareSymptoms: [],
+            otherSelfCareSymptoms: "",
+            occupationAffected: false,
+            occupationSymptoms: [],
+            otherOccupationSymptoms: "",
+            academicAffected: false,
+            academicSymptoms: [],
+            otherAcademicSymptoms: "",
+            interpersonalAffected: false,
+            interpersonalSymptoms: [],
+            otherInterpersonalSymptoms: "",
+            communitylAffected: false,
+            communitySymptoms: [],
+            otherCommunitySymptoms: "",
+        },
+        clientInitials: "",
+        pronouns: "",
+        identifiedProblem: "",
+        formulations: [
+            FormulationModel.create({replacementText: ["","","","","",""]}),
+            FormulationModel.create({replacementText: ["","","","","",""]}),
+            FormulationModel.create({replacementText: ["","","","","",""]}),
+            FormulationModel.create({replacementText: ["","","","","",""]}),
+            FormulationModel.create({replacementText: ["","","","","",""]}),
+            FormulationModel.create({replacementText: ["","","","","",""]}),
+            FormulationModel.create({replacementText: ["","","","","",""]}),
+            FormulationModel.create({replacementText: ["","","","","",""]}),
+            FormulationModel.create({replacementText: ["","","","","",""]}),
+        ]
+    },
+    currentTab: "/meeting-logstics",
+}

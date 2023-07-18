@@ -7,9 +7,8 @@ import { useAppState } from "../state/provider"
 
 const NoteContent = () => {
 
-    const { meetingInformation: {
+    const { comprehensiveAssessment: {
         questionaireRisk: {
-            clientInitials,
             noRisk,
             dangerToSelf,
             dangerToOthers,
@@ -47,7 +46,8 @@ const NoteContent = () => {
             communitySymptoms,
             otherCommunitySymptoms,
         },
-        progressions,
+        clientInitials,
+        pronouns,
         otherProgressions,
         identifiedProblem,
     } } = useAppState()
@@ -169,12 +169,6 @@ const NoteContent = () => {
             }
 
 
-            {(progressions.length > 0 || otherProgressions.length > 1 || otherProgressions[0].length > 0) &&
-                <b>Progress Towards Goals:</b>
-            }
-            {progressions.filter(i => i.checked).map(progress => (
-                <p key={progress.text}>{replaceText(progress.text, progress.replacementText)}</p>
-            ))}
             {otherProgressions.map(progress => (
                 <p key={progress}>{progress}</p>
             ))}

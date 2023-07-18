@@ -6,7 +6,7 @@ import { useAppState } from '../../state/provider';
 
 
 const MentalStatusExam = () => {
-  const { meetingInformation: {
+  const { comprehensiveAssessment: {
     mentalStatusExam: {
       appearance,
       motorActivity,

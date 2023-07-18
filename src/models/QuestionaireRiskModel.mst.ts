@@ -2,7 +2,7 @@ import { Instance, types } from "mobx-state-tree"
 import { RiskLevels } from "../state/constants"
 
 const QuestionaireRiskModel = types.model('QuestionaireRiskodel', {
-    clientInitials: types.string,
+
     noRisk: types.boolean,
     dangerToSelf: types.boolean,
     dangerToOthers: types.boolean,
@@ -18,9 +18,6 @@ const QuestionaireRiskModel = types.model('QuestionaireRiskodel', {
     intakeReviewDate: types.Date,
 }).actions((self) => {
     return {
-        setClientInitials(intitals: string): void {
-            self.clientInitials = intitals
-        },
         setCommentOnIntakeQuestionaire(comment: string): void {
             self.commentOnIntakeQuestionare = comment
         },

@@ -11,11 +11,7 @@ import {
 import { useAppState } from '../../state/provider';
 
 const Functioning = () => {
-  const { meetingInformation: {
-    questionaireRisk: {
-      clientInitials,
-      setClientInitials,
-    },
+  const { comprehensiveAssessment: {
     functioning: {
       selfCareAffected,
       selfCareSymptoms,
@@ -48,6 +44,8 @@ const Functioning = () => {
       setCommunitySymptom,
       setOtherCommunitySymptoms,
     },
+    clientInitials,
+    setClientInitials,
   }
   } = useAppState()
 
