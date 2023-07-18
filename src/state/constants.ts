@@ -234,33 +234,32 @@ export const possibleFormulations = [
     {type: "REPLACEMENT", prompt: "gender", index: 2},
     {type: "TEXT", text: "living in"},
     {type: "REPLACEMENT", prompt: "city, state", index: 3},
-    {type: "TEXT", text: "with"},
-    {type: "PRONOUN"},
-    {type: "REPLACEMENT", prompt: "list other's living in the home", index: 4},
+    {type: "TEXT", text: "."},
+],
+[
+    {type: "CLIENT"},
+    {type: "TEXT", text: "lives"},
+    {type: "REPLACEMENT", prompt: "alone or list other's living in the home", index: 4},
     {type: "TEXT", text: "."},
 
 ],
 [
     {type: "CLIENT"},
     {type: "TEXT", text: "came to us wanting to change"},
-    {type: "PRONOUN"},
+    {type: "PRONOUN POSSESSIVE"},
     {type: "TEXT", text: "relationship with"},
     {type: "ISSUE"},
-    {type: "TEXT", text: ", specifically how it was affecting"},
-    {type: "REPLACEMENT", prompt: "age", index: 0},
+    {type: "TEXT", text: ", specifically how it was effecting"},
+    {type: "REPLACEMENT", prompt: "experience near description of how problem is effecting life", index: 0},
 ],
 [
     {type: "ISSUE"},
     {type: "TEXT", text: "has"},
     {type: "CLIENT"},
     {type: "TEXT", text: "thinking that"},
-    {type: "PRONOUN"},
-    {type: "REPLACEMENT", prompt: "age", index: 0},
-
-
-    {type: "TEXT", text: "relationship with"},
-    {type: "TEXT", text: ", specifically how it was affecting"},
+    {type: "PRONOUN OBJECT"},
     {type: "REPLACEMENT", prompt: "what does the problem have the person served thinking about themself", index: 0},
+
 ],
 [
     {type: "CLIENT"},
@@ -270,29 +269,58 @@ export const possibleFormulations = [
     {type: "ISSUE"},
 
 ],
+[
+    {type: "CLIENT"},
+    {type: "TEXT", text: "hopes to come up with ways to counter the ideas"},
+    {type: "ISSUE"},
+    {type: "TEXT", text: "is promoting."},
+
+],
+[
+    {type: "CLIENT"},
+    {type: "TEXT", text: "has a history with"},
+    {type: "ISSUE"},
+    {type: "TEXT", text: "so has developed strategies to help counter its effects including:"},
+    {type: "REPLACEMENT", prompt: "list knowledges/stratgies that will help counter problem", index: 0},
+
+],
+[
+    {type: "CLIENT"},
+    {type: "TEXT", text: "has"}, 
+    {type: "REPLACEMENT", prompt: "list social supports", index: 0},
+    {type: "TEXT", text: "to help"}, 
+    {type: "PRONOUN OBJECT"},
+    {type: "TEXT", text: "stand up to"},
+    {type: "ISSUE"},
+    {type: "TEXT", text: "’s effects."}, 
+
+],
+[
+    {type: "TEXT", text: "In our work together we hope to look into the possible different stories about"},
+    {type: "CLIENT"},
+    {type: "TEXT", text: "and"},
+    {type: "ISSUE"},
+    {type: "TEXT", text: "by using narrative practice of problem deconstruction and alternative story development."},
+
+],
+[
+    {type: "TEXT", text: "We might also explore cultural discourses effecting"},
+    {type: "PRONOUN OBJECT"},
+    {type: "TEXT", text: "relationship with"},
+    {type: "ISSUE"},
+    {type: "TEXT", text: "."},
+
+],
+[
+    {type: "CLIENT"},
+    {type: "TEXT", text: "seems committed to having a more preferred relationship with"},
+    {type: "ISSUE"},
+    {type: "TEXT", text: "to reduce the effects in"},
+    {type: "PRONOUN POSSESSIVE"},
+    {type: "TEXT", text: "life."},
 
 ]
-    
-
-
-    // {
-    //     text: "[CLIENT] hopes to come up with ways to counter the ideas [ISSUE] is promoting.",
-    // },
-    // {
-    //     text: "[CLIENT] has a history with [ISSUE] so has developed strategies to help counter its effects including:[REPLACEMENT1].",
-    //     prompt: [
-    //         "list knowledges/stratgies that will help counter problem",
-    //     ]
-    // },
-    // {
-    //     text: "[CLIENT] has [REPLACEMENT1] to help [PRONOUN] stand up to [ISSUE]’s effects. ",
-    //     prompt: [
-    //         "list social supports",
-    //     ]
-    // },
-    // {
-    //     text: "In our work together we hope to look into the possible different stories about [CLIENT] and [ISSUE] by using narrative practice of problem deconstruction and alternative story development. We might also explore cultural discourse affecting [PRONOUN] relationship with [ISSUE]. [CLIENT] seems committed to having a more preferred relationship with [ISSUE] to reduce the effect in [PRONOUN] life.",
-    // },
+]
 
 
 export const initialState = {
