@@ -26,7 +26,7 @@ const Formulation = () => {
     //.replace('[REPLACEMENT]',progressions.find(i => i.possibleProgressIndex === index)?.replacementText || "[REPLACE ME]")
   }
 
-
+console.log("POOPY")
   return (
     <Container>
       <Box>
@@ -48,13 +48,13 @@ const Formulation = () => {
                   formulation.map(section => {
                     switch (section.type) {
                       case "TEXT":
-                        return <Typography  width='auto' key={uuid()}>{section.text}</Typography>
+                        return <Typography  width='auto'>{section.text}</Typography>
                       case "CLIENT":
-                        return <Typography width='auto' key={uuid()}>{clientInitials}</Typography>
+                        return <Typography width='auto'>{clientInitials}</Typography>
                       case "PRONOUN":
-                        return <Typography width='auto' key={uuid()}>{pronouns}</Typography>
+                        return <Typography width='auto'>{pronouns}</Typography>
                       case "ISSUE":
-                        return <Typography width='auto' key={uuid()}>{identifiedProblem}</Typography>
+                        return <Typography width='auto'>{identifiedProblem}</Typography>
                       case "REPLACEMENT":
                         return <TextField 
                           key={uuid()} 

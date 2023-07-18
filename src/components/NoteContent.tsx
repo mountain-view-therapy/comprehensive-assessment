@@ -4,11 +4,14 @@ import dayjs from 'dayjs-ext'
 import timeZonePlugin from 'dayjs-ext/plugin/timeZone'
 import { observer } from "mobx-react-lite"
 import { useAppState } from "../state/provider"
+import { possibleFormulations } from "../state/constants"
 
 const NoteContent = () => {
 
     const { comprehensiveAssessment: {
         questionaireRisk: {
+            intakeReviewDate,
+            commentOnIntakeQuestionare,
             noRisk,
             dangerToSelf,
             dangerToOthers,
@@ -22,12 +25,20 @@ const NoteContent = () => {
             otherRiskInformation,
         },
         mentalStatusExam: {
-            cognitiveFunctioning,
+            appearance,
+            motorActivity,
             affect,
             mood,
-            interpersonal,
+            orientation,
+            memory,
+            attention,
+            perception,
+            cognitiveFunctioning,
             functionalStatus,
-
+            interpersonal,
+        },
+        diagnostics: {
+            diagnoses
         },
         functioning: {
             selfCareAffected,
@@ -50,6 +61,7 @@ const NoteContent = () => {
         pronouns,
         otherProgressions,
         identifiedProblem,
+        formulations,
     } } = useAppState()
 
     dayjs.extend(timeZonePlugin).locale('cs')
@@ -64,11 +76,58 @@ const NoteContent = () => {
 
     return (
         <div>
+            <div>Intake questionaire reviewed with {clientInitials} on {intakeReviewDate.toLocaleDateString()}.</div>
+            {commentOnIntakeQuestionare ? commentOnIntakeQuestionare : "No comments on questionaire."}
+
+
+            {(noRisk || dangerToOthers || dangerToSelf || otherRisk) &&
+                <div>
+                    <b>Risk Assessment: </b>
+                    <ul>
+                        {noRisk && <li>No Significant Risk Factors presented</li>}
+                        {dangerToSelf &&
+                            <li>
+                                Danger to Self
+                                <ul>
+                                    <li>Risk Level: {dangerToSelfRisk}</li>
+                                    <li>Evidence: {dangerToSelfEvidence}</li>
+                                    <li>Plan: {dangerToSelfPlan}</li>
+                                </ul>
+                            </li>
+                        }
+                        {dangerToOthers &&
+                            <li>
+                                Danger to Others
+                                <ul>
+                                    <li>Risk Level: {dangerToOthersRisk}</li>
+                                    <li>Evidence: {dangerToOthersEvidence}</li>
+                                    <li>Plan: {dangerToOthersPlan}</li>
+                                </ul>
+                            </li>
+                        }
+                        {otherRisk &&
+                            <li>
+                                Other Risk
+                                <ul>
+                                    <li>Information: {otherRiskInformation}</li>
+                                </ul>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            }
+
             <div><b>Mental Status Exam</b>
                 <ul>
-                    {cognitiveFunctioning &&
+                    {appearance &&
                         <li>
-                            <b>Cognitive Functioning: </b> {cognitiveFunctioning}
+                            <b>Appearance: </b> {appearance}
+                        </li>
+                    }
+
+                    {motorActivity &&
+                        <li>
+                            <b>Motor Activity: </b> {motorActivity}
                         </li>
                     }
                     {affect &&
@@ -81,9 +140,29 @@ const NoteContent = () => {
                             <b>Mood: </b> {mood}
                         </li>
                     }
-                    {interpersonal &&
+                    {orientation &&
                         <li>
-                            <b>Interpersonal: </b> {interpersonal}
+                            <b>Orientation: </b> {orientation}
+                        </li>
+                    }
+                    {memory &&
+                        <li>
+                            <b>Memory: </b> {memory}
+                        </li>
+                    }
+                    {attention &&
+                        <li>
+                            <b>Attention: </b> {attention}
+                        </li>
+                    }
+                    {perception &&
+                        <li>
+                            <b>Perception: </b> {perception}
+                        </li>
+                    }
+                    {cognitiveFunctioning &&
+                        <li>
+                            <b>Cognitive Functioning: </b> {cognitiveFunctioning}
                         </li>
                     }
                     {functionalStatus &&
@@ -91,47 +170,34 @@ const NoteContent = () => {
                             <b>Functional Status: </b> {functionalStatus}
                         </li>
                     }
+                    {interpersonal &&
+                        <li>
+                            <b>Interpersonal: </b> {interpersonal}
+                        </li>
+                    }
                 </ul>
 
-                {(noRisk || dangerToOthers || dangerToSelf || otherRisk) &&
-                    <>
-                        <b>Risk Status: </b>
-                        <ul>
-                            {noRisk && <li>No Significant Risk Factors presented</li>}
-                            {dangerToSelf &&
-                                <li>
-                                    Danger to Self
-                                    <ul>
-                                        <li>Risk Level: {dangerToSelfRisk}</li>
-                                        <li>Evidence: {dangerToSelfEvidence}</li>
-                                        <li>Plan: {dangerToSelfPlan}</li>
-                                    </ul>
-                                </li>
-                            }
-                            {dangerToOthers &&
-                                <li>
-                                    Danger to Others
-                                    <ul>
-                                        <li>Risk Level: {dangerToOthersRisk}</li>
-                                        <li>Evidence: {dangerToOthersEvidence}</li>
-                                        <li>Plan: {dangerToOthersPlan}</li>
-                                    </ul>
-                                </li>
-                            }
-                            {otherRisk &&
-                                <li>
-                                    Other Risk
-                                    <ul>
-                                        <li>Information: {otherRiskInformation}</li>
-                                    </ul>
-                                </li>
-                            }
-                        </ul>
-                    </>
-                }
             </div>
 
-           
+            <div>
+                <p> </p>
+                <b>Diagnoses</b>
+                {diagnoses.map(diagnosis => <>
+                    <p>{diagnosis.otherDiagnosisName || diagnosis.diagnosisName}</p>
+                    <ul>
+                        {diagnosis.symptoms.map(symptom =>
+                            <li key={symptom}>
+                                {symptom}
+                            </li>
+                        )
+                        }
+                        {diagnosis.otherSymptoms && <li>{diagnosis.otherSymptoms}</li>}
+                    </ul>
+                </>
+                )}
+            </div>
+
+
             {selfCareAffected &&
                 <p>
                     These symptoms affect {clientInitials || <b>Client's Initials</b>}'s self care.
@@ -168,11 +234,25 @@ const NoteContent = () => {
                 </p>
             }
 
-
-            {otherProgressions.map(progress => (
-                <p key={progress}>{progress}</p>
-            ))}
-
+            <div><b>Clinical Formulation</b></div>
+{possibleFormulations.map((formulation,index) => {
+    return formulation.map(section => {
+        switch (section.type) {
+            case "TEXT":
+              return <span>{section.text}</span>
+            case "CLIENT":
+              return <span>{clientInitials}</span>
+            case "PRONOUN":
+              return <span>{pronouns}</span>
+            case "ISSUE":
+              return <span>{identifiedProblem}</span>
+            case "REPLACEMENT":
+              return  <span>{formulations[index].replacementText[section.index  || 0]}</span>
+            default:
+              return null
+          }
+    })
+})}
 
         </div >
     )
