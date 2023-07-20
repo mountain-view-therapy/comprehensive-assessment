@@ -242,7 +242,7 @@ const showFormulations = clientInitials && possesivePronoun && pronounObject && 
                             return <span> {clientInitials}</span>
                         case "PRONOUN OBJECT":
                             return <span> {pronounObject}</span>
-                        case "PRONOUN POSSESIVE":
+                        case "PRONOUN POSSESSIVE":
                             return <span> {possesivePronoun}</span>
                         case "ISSUE":
                             return <span> {identifiedProblem}</span>

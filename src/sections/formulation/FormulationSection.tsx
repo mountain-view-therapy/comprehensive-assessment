@@ -1,4 +1,4 @@
-import { TextField, Typography } from '@mui/material'
+import { Divider, TextField, Typography } from '@mui/material'
 import { Box, Container, Stack } from '@mui/system';
 import { observer } from 'mobx-react-lite';
 import { possibleFormulations } from '../../state/constants';
@@ -8,7 +8,7 @@ import Section from '../../components/Section';
 
 const Formulation = ({ formulation, index }: { formulation: any; index: number }) => {
   return (
-    < Stack flexDirection='row' alignItems='center'>
+    < Stack flexDirection='row' alignItems='center' marginBottom={1}>
       <Section
         sections={formulation}
         index={index}
@@ -34,7 +34,7 @@ const FormulationSection = () => {
     <Container>
       <Box>
         <Stack justifyContent='center' alignItems='center' flexDirection='row' margin={2}>
-          <Typography fontWeight={800} fontSize={24}>Progress</Typography>
+          <Typography fontWeight={800} fontSize={24}>Formulations</Typography>
         </Stack>
       </Box>
       <Stack>
@@ -44,7 +44,8 @@ const FormulationSection = () => {
           <TextField label="Possesive Pronoun" value={possesivePronoun} onChange={(e) => setPossesivePronoun(e.target.value)} style={{ width: 200 }} />
           <TextField label="Pronoun Object" value={pronounObject} onChange={(e) => setPronounObject(e.target.value)} style={{ width: 200 }} />
         </Stack>
-        < Stack flexDirection='column' gap={3}>
+        <Divider />
+        < Stack flexDirection='column' gap={3} marginTop={3}>
           {
             possibleFormulations.map((formulation, index) => (
               <Formulation

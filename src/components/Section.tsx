@@ -16,7 +16,7 @@ type Props = {
   index: number;
 }
 
-const Section = ({sections, index}: Props) => {
+const Section = ({ sections, index }: Props) => {
 
   const {
     comprehensiveAssessment: {
@@ -29,23 +29,24 @@ const Section = ({sections, index}: Props) => {
     } } = useAppState()
 
   return (
-    <>
+    <Typography flexDirection='row' alignItems='center' justifyContent='flex-start' >
       {
         sections.map((section: SectionType) => {
           switch (section.type) {
             case "TEXT":
-              return <Typography key={section.id1} marginRight={1} marginLeft={1}>{section.text}</Typography>
+              return " " + section.text
             case "CLIENT":
-              return <Typography key={section.id1} marginRight={1} marginLeft={1}> {clientInitials}</Typography>
+              return " " + clientInitials
             case "PRONOUN OBJECT":
-              return <Typography key={section.id1} marginRight={1} marginLeft={1}> {pronounObject}</Typography>
-            case "PRONOUN POSSESIVE":
-              return <Typography key={section.id1} marginRight={1} marginLeft={1}> {possesivePronoun}</Typography>
+              return " " + pronounObject
+            case "PRONOUN POSSESSIVE":
+              return " " + possesivePronoun
             case "ISSUE":
-              return <Typography key={section.id1} marginRight={1} marginLeft={1}> {identifiedProblem}</Typography>
+              return " " + identifiedProblem
             case "REPLACEMENT":
               return <TextField
-              key={section.id1}
+                style={{marginRight: '3px', marginLeft: '3px', width:"120px"}}
+                key={section.id1}
                 value={formulations[index].replacementText[section.index || 0]}
                 onChange={e => setReplacementText(e.target.value, index, section.index || 0)}
                 placeholder={section.prompt}
@@ -54,7 +55,7 @@ const Section = ({sections, index}: Props) => {
               return null
           }
         })}
-    </>
+    </Typography>
   )
 }
 
