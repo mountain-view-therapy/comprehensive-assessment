@@ -1,4 +1,5 @@
 import FormulationModel from "../models/FormulationModel.mst"
+import { v4 as uuid } from 'uuid';
 
 
 export const appearanceStates = [
@@ -225,101 +226,92 @@ export type PossiblePTSDSymptom = typeof possibleSymptoms["F43.10 Posttraumatic 
 export type PossibleSymptom = PossibleAnxietySymptom | PossibleDepressionSymptom | PossiblePTSDSymptom
 
 export const possibleFormulations = [
-[
-    {type: "CLIENT"},
-    {type: "TEXT", text: "is a"},
-    {type: "REPLACEMENT", prompt: "age", index: 0},
-    {type: "TEXT", text: "years old"},
-    {type: "REPLACEMENT", prompt: "race", index: 1},
-    {type: "REPLACEMENT", prompt: "gender", index: 2},
-    {type: "TEXT", text: "living in"},
-    {type: "REPLACEMENT", prompt: "city, state", index: 3},
-    {type: "TEXT", text: "."},
-],
-[
-    {type: "CLIENT"},
-    {type: "TEXT", text: "lives"},
-    {type: "REPLACEMENT", prompt: "alone or list other's living in the home", index: 4},
-    {type: "TEXT", text: "."},
-
-],
-[
-    {type: "CLIENT"},
-    {type: "TEXT", text: "came to us wanting to change"},
-    {type: "PRONOUN POSSESSIVE"},
-    {type: "TEXT", text: "relationship with"},
-    {type: "ISSUE"},
-    {type: "TEXT", text: ", specifically how it was effecting"},
-    {type: "REPLACEMENT", prompt: "experience near description of how problem is effecting life", index: 0},
-],
-[
-    {type: "ISSUE"},
-    {type: "TEXT", text: "has"},
-    {type: "CLIENT"},
-    {type: "TEXT", text: "thinking that"},
-    {type: "PRONOUN OBJECT"},
-    {type: "REPLACEMENT", prompt: "what does the problem have the person served thinking about themself", index: 0},
-
-],
-[
-    {type: "CLIENT"},
-    {type: "TEXT", text: "is"},
-    {type: "REPLACEMENT", prompt: "ok, not ok", index: 0},
-    {type: "TEXT", text: "with the story being promoted by"},
-    {type: "ISSUE"},
-
-],
-[
-    {type: "CLIENT"},
-    {type: "TEXT", text: "hopes to come up with ways to counter the ideas"},
-    {type: "ISSUE"},
-    {type: "TEXT", text: "is promoting."},
-
-],
-[
-    {type: "CLIENT"},
-    {type: "TEXT", text: "has a history with"},
-    {type: "ISSUE"},
-    {type: "TEXT", text: "so has developed strategies to help counter its effects including:"},
-    {type: "REPLACEMENT", prompt: "list knowledges/stratgies that will help counter problem", index: 0},
-
-],
-[
-    {type: "CLIENT"},
-    {type: "TEXT", text: "has"}, 
-    {type: "REPLACEMENT", prompt: "list social supports", index: 0},
-    {type: "TEXT", text: "to help"}, 
-    {type: "PRONOUN OBJECT"},
-    {type: "TEXT", text: "stand up to"},
-    {type: "ISSUE"},
-    {type: "TEXT", text: "’s effects."}, 
-
-],
-[
-    {type: "TEXT", text: "In our work together we hope to look into the possible different stories about"},
-    {type: "CLIENT"},
-    {type: "TEXT", text: "and"},
-    {type: "ISSUE"},
-    {type: "TEXT", text: "by using narrative practice of problem deconstruction and alternative story development."},
-
-],
-[
-    {type: "TEXT", text: "We might also explore cultural discourses effecting"},
-    {type: "PRONOUN OBJECT"},
-    {type: "TEXT", text: "relationship with"},
-    {type: "ISSUE"},
-    {type: "TEXT", text: "."},
-
-],
-[
-    {type: "CLIENT"},
-    {type: "TEXT", text: "seems committed to having a more preferred relationship with"},
-    {type: "ISSUE"},
-    {type: "TEXT", text: "to reduce the effects in"},
-    {type: "PRONOUN POSSESSIVE"},
-    {type: "TEXT", text: "life."},
-
-]
+    [
+        { id1: uuid(), type: "CLIENT" },
+        { id1: uuid(), type: "TEXT", text: "is a" },
+        { id1: uuid(), type: "REPLACEMENT", prompt: "age", index: 0 },
+        { id1: uuid(), type: "TEXT", text: "years old" },
+        { id1: uuid(), type: "REPLACEMENT", prompt: "race", index: 1 },
+        { id1: uuid(), type: "REPLACEMENT", prompt: "gender", index: 2 },
+        { id1: uuid(), type: "TEXT", text: "living in" },
+        { id1: uuid(), type: "REPLACEMENT", prompt: "city, state", index: 3 },
+        { id1: uuid(), type: "TEXT", text: "." },
+    ],
+    [
+        { id1: uuid(), type: "CLIENT" },
+        { id1: uuid(), type: "TEXT", text: "lives" },
+        { id1: uuid(), type: "REPLACEMENT", prompt: "alone or list other's living in the home", index: 4 },
+        { id1: uuid(), type: "TEXT", text: "." },
+    ],
+    [
+        { id1: uuid(), type: "CLIENT" },
+        { id1: uuid(), type: "TEXT", text: "came to us wanting to change" },
+        { id1: uuid(), type: "PRONOUN POSSESSIVE" },
+        { id1: uuid(), type: "TEXT", text: "relationship with" },
+        { id1: uuid(), type: "ISSUE" },
+        { id1: uuid(), type: "TEXT", text: ", specifically how it was effecting" },
+        { id1: uuid(), type: "REPLACEMENT", prompt: "experience near description of how problem is effecting life", index: 0 },
+    ],
+    [
+        { id1: uuid(), type: "ISSUE" },
+        { id1: uuid(), type: "TEXT", text: "has" },
+        { id1: uuid(), type: "CLIENT" },
+        { id1: uuid(), type: "TEXT", text: "thinking that" },
+        { id1: uuid(), type: "PRONOUN OBJECT" },
+        { id1: uuid(), type: "REPLACEMENT", prompt: "what does the problem have the person served thinking about themself", index: 0 },
+    ],
+    [
+        { id1: uuid(), type: "CLIENT" },
+        { id1: uuid(), type: "TEXT", text: "is" },
+        { id1: uuid(), type: "REPLACEMENT", prompt: "ok, not ok", index: 0 },
+        { id1: uuid(), type: "TEXT", text: "with the story being promoted by" },
+        { id1: uuid(), type: "ISSUE" },
+    ],
+    [
+        { id1: uuid(), type: "CLIENT" },
+        { id1: uuid(), type: "TEXT", text: "hopes to come up with ways to counter the ideas" },
+        { id1: uuid(), type: "ISSUE" },
+        { id1: uuid(), type: "TEXT", text: "is promoting." },
+    ],
+    [
+        { id1: uuid(), type: "CLIENT" },
+        { id1: uuid(), type: "TEXT", text: "has a history with" },
+        { id1: uuid(), type: "ISSUE" },
+        { id1: uuid(), type: "TEXT", text: "so has developed strategies to help counter its effects including:" },
+        { id1: uuid(), type: "REPLACEMENT", prompt: "list knowledges/stratgies that will help counter problem", index: 0 },
+    ],
+    [
+        { id1: uuid(), type: "CLIENT" },
+        { id1: uuid(), type: "TEXT", text: "has" },
+        { id1: uuid(), type: "REPLACEMENT", prompt: "list social supports", index: 0 },
+        { id1: uuid(), type: "TEXT", text: "to help" },
+        { id1: uuid(), type: "PRONOUN OBJECT" },
+        { id1: uuid(), type: "TEXT", text: "stand up to" },
+        { id1: uuid(), type: "ISSUE" },
+        { id1: uuid(), type: "TEXT", text: "’s effects." },
+    ],
+    [
+        { id1: uuid(), type: "TEXT", text: "In our work together we hope to look into the possible different stories about" },
+        { id1: uuid(), type: "CLIENT" },
+        { id1: uuid(), type: "TEXT", text: "and" },
+        { id1: uuid(), type: "ISSUE" },
+        { id1: uuid(), type: "TEXT", text: "by using narrative practice of problem deconstruction and alternative story development." },
+    ],
+    [
+        { id1: uuid(), type: "TEXT", text: "We might also explore cultural discourses effecting" },
+        { id1: uuid(), type: "PRONOUN OBJECT" },
+        { id1: uuid(), type: "TEXT", text: "relationship with" },
+        { id1: uuid(), type: "ISSUE" },
+        { id1: uuid(), type: "TEXT", text: "." },
+    ],
+    [
+        { id1: uuid(), type: "CLIENT" },
+        { id1: uuid(), type: "TEXT", text: "seems committed to having a more preferred relationship with" },
+        { id1: uuid(), type: "ISSUE" },
+        { id1: uuid(), type: "TEXT", text: "to reduce the effects in" },
+        { id1: uuid(), type: "PRONOUN POSSESSIVE" },
+        { id1: uuid(), type: "TEXT", text: "life." },
+    ]
 ]
 
 
@@ -341,7 +333,7 @@ export const initialState = {
             otherRiskInformation: "",
         },
         mentalStatusExam: {
-            appearance:"Typical",
+            appearance: "Typical",
             motorActivity: "Typical",
             affect: "Appropriate",
             mood: "Euthymic",
@@ -396,18 +388,19 @@ export const initialState = {
             otherCommunitySymptoms: "",
         },
         clientInitials: "",
-        pronouns: "",
+        pronounObject: "",
+        possesivePronoun: "",
         identifiedProblem: "",
         formulations: [
-            FormulationModel.create({replacementText: ["","","","","",""]}),
-            FormulationModel.create({replacementText: ["","","","","",""]}),
-            FormulationModel.create({replacementText: ["","","","","",""]}),
-            FormulationModel.create({replacementText: ["","","","","",""]}),
-            FormulationModel.create({replacementText: ["","","","","",""]}),
-            FormulationModel.create({replacementText: ["","","","","",""]}),
-            FormulationModel.create({replacementText: ["","","","","",""]}),
-            FormulationModel.create({replacementText: ["","","","","",""]}),
-            FormulationModel.create({replacementText: ["","","","","",""]}),
+            FormulationModel.create({ replacementText: ["", "", "", "", "", ""] }),
+            FormulationModel.create({ replacementText: ["", "", "", "", "", ""] }),
+            FormulationModel.create({ replacementText: ["", "", "", "", "", ""] }),
+            FormulationModel.create({ replacementText: ["", "", "", "", "", ""] }),
+            FormulationModel.create({ replacementText: ["", "", "", "", "", ""] }),
+            FormulationModel.create({ replacementText: ["", "", "", "", "", ""] }),
+            FormulationModel.create({ replacementText: ["", "", "", "", "", ""] }),
+            FormulationModel.create({ replacementText: ["", "", "", "", "", ""] }),
+            FormulationModel.create({ replacementText: ["", "", "", "", "", ""] }),
         ]
     },
     currentTab: "/meeting-logstics",

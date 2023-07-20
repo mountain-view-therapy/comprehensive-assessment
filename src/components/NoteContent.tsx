@@ -58,17 +58,15 @@ const NoteContent = () => {
             otherCommunitySymptoms,
         },
         clientInitials,
-        pronouns,
-        otherProgressions,
+        possesivePronoun,
+        pronounObject,
         identifiedProblem,
         formulations,
     } } = useAppState()
 
     dayjs.extend(timeZonePlugin).locale('cs')
 
-    const replaceText = (text: string, replacementText: string) => {
-        return text.replace('[PROBLEM]', identifiedProblem).replace('[CLIENT]', clientInitials).replace('[REPLACEMENT]', replacementText)
-    }
+const showFormulations = clientInitials && possesivePronoun && pronounObject && identifiedProblem;
 
     const replaceClientsIntitals = (text: string) => {
         return text.replace('[CLIENT]', clientInitials)
@@ -235,24 +233,26 @@ const NoteContent = () => {
             }
 
             <div><b>Clinical Formulation</b></div>
-{possibleFormulations.map((formulation,index) => {
-    return formulation.map(section => {
-        switch (section.type) {
-            case "TEXT":
-              return <span>{section.text}</span>
-            case "CLIENT":
-              return <span>{clientInitials}</span>
-            case "PRONOUN":
-              return <span>{pronouns}</span>
-            case "ISSUE":
-              return <span>{identifiedProblem}</span>
-            case "REPLACEMENT":
-              return  <span>{formulations[index].replacementText[section.index  || 0]}</span>
-            default:
-              return null
-          }
-    })
-})}
+            {showFormulations && possibleFormulations.map((formulation, index) => {
+                return formulation.map(section => {
+                    switch (section.type) {
+                        case "TEXT":
+                            return <span>{section.text && section.text.length > 1 ? " " + section.text :  section.text}</span>
+                        case "CLIENT":
+                            return <span> {clientInitials}</span>
+                        case "PRONOUN OBJECT":
+                            return <span> {pronounObject}</span>
+                        case "PRONOUN POSSESIVE":
+                            return <span> {possesivePronoun}</span>
+                        case "ISSUE":
+                            return <span> {identifiedProblem}</span>
+                        case "REPLACEMENT":
+                            return <span> {formulations[index].replacementText[section.index || 0]}</span>
+                        default:
+                            return null
+                    }
+                })
+            })}
 
         </div >
     )

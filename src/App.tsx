@@ -6,7 +6,7 @@ import Functioning from "./sections/functioning/Functioning";
 import QuestionaireRisk from "./sections/questionaireRisk/QuestionaireRisk";
 import MentalStatusExam from "./sections/mentalStatusExam/MentalStatusExam";
 import Note from "./sections/note/Note";
-import Formulation from "./sections/formulation/Formulation";
+import FormulationSection from "./sections/formulation/FormulationSection";
 import Diagnostic from "./sections/diagnostic/Diagnostic";
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
         <Route path="mental-status-exam" element={<MentalStatusExam />} />
         <Route path="diagnostic" element={<Diagnostic />} />
         <Route path="functioning" element={<Functioning />} />
-        <Route path="formulation" element={<Formulation />} />
+        <Route path="formulation" element={<FormulationSection />} />
         <Route path="*" element={<NoMatch />} />
       </Route>
     </Routes>
@@ -92,7 +92,7 @@ const Layout = () => {
             <Outlet />
           </Box>
         </Box>
-        <Box flexGrow={2} >
+        <Box flexGrow={2} maxWidth='30%'>
           <Box overflow='auto' >
             <Note />
           </Box>

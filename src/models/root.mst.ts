@@ -1,4 +1,4 @@
-import { Instance, types } from 'mobx-state-tree';
+import { Instance, types, destroy, detach } from 'mobx-state-tree';
 import { initialState } from '../state/constants';
 import ComprehensiveAssessmentModel from './ComprehensiveAssessmentModel.mst';
 
@@ -13,7 +13,9 @@ const RootModel = types
         self.currentTab = tab
       },
       resetNoteState(): void {
-        self.comprehensiveAssessment = ComprehensiveAssessmentModel.create(initialState.comprehensiveAssessment)
+        const newState = ComprehensiveAssessmentModel.create(initialState.comprehensiveAssessment)
+        console.log(newState)
+        self.comprehensiveAssessment = newState
       },
     }
   })
