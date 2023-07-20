@@ -59,7 +59,7 @@ const QuestionaireRisk = () => {
           <Box width='50%'>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DatePicker
-                label="Intake question review with client on"
+                label="Intake questionaire review with client on"
                 value={intakeReviewDate}
                 onChange={(newValue) => setIntakeReviewDate(new Date(newValue || "") || new Date())}
                 renderInput={(props) => <TextField {...props} />}
