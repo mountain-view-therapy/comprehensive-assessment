@@ -39,7 +39,7 @@ const Section = ({ sections, index }: Props) => {
               return " " + identifiedProblem
             case "REPLACEMENT":
               return <TextField
-                style={{marginRight: '3px', marginLeft: '3px', width: ((section.prompt?.length || 0) * 8 + 30)}}
+                style={{marginRight: '3px', marginLeft: '3px', width: ((section.prompt?.length || 0) * 9 + 30)}}
                 key={section.id1}
                 value={formulations[index].replacementText[section.index || 0]}
                 onChange={e => setReplacementText(e.target.value, index, section.index || 0)}

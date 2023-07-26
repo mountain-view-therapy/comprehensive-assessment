@@ -257,7 +257,7 @@ export const possibleFormulations = [
     [
         { id1: uuid(), type: "CLIENT" },
         { id1: uuid(), type: "TEXT", text: "lives" },
-        { id1: uuid(), type: "REPLACEMENT", prompt: "alone or list other's living in the home", index: 4 },
+        { id1: uuid(), type: "REPLACEMENT", prompt: "alone or list other's living in the home", index: 0 },
         { id1: uuid(), type: "TEXT", text: "." },
     ],
     [
@@ -305,7 +305,7 @@ export const possibleFormulations = [
         { id1: uuid(), type: "REPLACEMENT", prompt: "Pronoun", index: 1 },
         { id1: uuid(), type: "TEXT", text: "stand up to" },
         { id1: uuid(), type: "ISSUE" },
-        { id1: uuid(), type: "TEXT", text: "’s effects." },
+        { id1: uuid(), type: "TEXT", text: "'s effects." },
     ],
     [
         { id1: uuid(), type: "TEXT", text: "In our work together we hope to look into the possible different stories about" },
@@ -407,6 +407,9 @@ export const initialState = {
         clientInitials: "",
         identifiedProblem: "",
         formulations: [
+            FormulationModel.create({ replacementText: ["", "", "", "", "", ""] }),
+            FormulationModel.create({ replacementText: ["", "", "", "", "", ""] }),
+            FormulationModel.create({ replacementText: ["", "", "", "", "", ""] }),
             FormulationModel.create({ replacementText: ["", "", "", "", "", ""] }),
             FormulationModel.create({ replacementText: ["", "", "", "", "", ""] }),
             FormulationModel.create({ replacementText: ["", "", "", "", "", ""] }),
