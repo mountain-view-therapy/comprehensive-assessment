@@ -405,8 +405,6 @@ export const initialState = {
             otherCommunitySymptoms: "",
         },
         clientInitials: "",
-        pronounObject: "",
-        possesivePronoun: "",
         identifiedProblem: "",
         formulations: [
             FormulationModel.create({ replacementText: ["", "", "", "", "", ""] }),

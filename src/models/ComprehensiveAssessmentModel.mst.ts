@@ -14,18 +14,10 @@ const ComprehensiveAssessmentModel = types.model('ComprehensiveAssessmentModel',
     otherProgressions: types.array(types.string),
     identifiedProblem: types.string,
     clientInitials: types.string,
-    possesivePronoun: types.string,
-    pronounObject: types.string,
 }).actions((self) => {
     return {
         setClientInitials(intitals: string): void {
             self.clientInitials = intitals
-        },
-        setPronounObject(pronoun: string): void {
-            self.pronounObject = pronoun
-        },
-        setPossesivePronoun(pronoun: string): void {
-            self.possesivePronoun = pronoun
         },
         setIdentifiedProblem(problem: string): void {
             self.identifiedProblem = problem

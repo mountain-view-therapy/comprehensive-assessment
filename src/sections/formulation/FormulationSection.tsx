@@ -21,12 +21,8 @@ const FormulationSection = () => {
   const {
     comprehensiveAssessment: {
       clientInitials,
-      pronounObject,
-      possesivePronoun,
       identifiedProblem,
       setClientInitials,
-      setPronounObject,
-      setPossesivePronoun,
       setIdentifiedProblem,
     } } = useAppState()
 
@@ -38,11 +34,9 @@ const FormulationSection = () => {
         </Stack>
       </Box>
       <Stack>
-        <Stack flexDirection='row' justifyContent='space-between' marginBottom={3}>
+        <Stack flexDirection='row' justifyContent='space-evenly' marginBottom={3}>
           <TextField label='Identified Issue' value={identifiedProblem} onChange={(e) => setIdentifiedProblem(e.target.value)} />
           <TextField label="Client's Initials" value={clientInitials} onChange={(e) => setClientInitials(e.target.value)} style={{ width: 200 }} />
-          <TextField label="Possesive Pronoun" value={possesivePronoun} onChange={(e) => setPossesivePronoun(e.target.value)} style={{ width: 200 }} />
-          <TextField label="Pronoun Object" value={pronounObject} onChange={(e) => setPronounObject(e.target.value)} style={{ width: 200 }} />
         </Stack>
         <Divider />
         < Stack flexDirection='column' gap={3} marginTop={3}>
