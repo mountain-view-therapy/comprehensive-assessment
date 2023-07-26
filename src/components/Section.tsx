@@ -21,8 +21,6 @@ const Section = ({ sections, index }: Props) => {
   const {
     comprehensiveAssessment: {
       clientInitials,
-      pronounObject,
-      possesivePronoun,
       identifiedProblem,
       formulations,
       setReplacementText,
@@ -37,15 +35,11 @@ const Section = ({ sections, index }: Props) => {
               return " " + section.text
             case "CLIENT":
               return " " + clientInitials
-            case "PRONOUN OBJECT":
-              return " " + pronounObject
-            case "PRONOUN POSSESSIVE":
-              return " " + possesivePronoun
             case "ISSUE":
               return " " + identifiedProblem
             case "REPLACEMENT":
               return <TextField
-                style={{marginRight: '3px', marginLeft: '3px', width:"120px"}}
+                style={{marginRight: '3px', marginLeft: '3px', width: ((section.prompt?.length || 0) * 8 + 30)}}
                 key={section.id1}
                 value={formulations[index].replacementText[section.index || 0]}
                 onChange={e => setReplacementText(e.target.value, index, section.index || 0)}

@@ -58,15 +58,13 @@ const NoteContent = () => {
             otherCommunitySymptoms,
         },
         clientInitials,
-        possesivePronoun,
-        pronounObject,
         identifiedProblem,
         formulations,
     } } = useAppState()
 
     dayjs.extend(timeZonePlugin).locale('cs')
 
-const showFormulations = clientInitials && possesivePronoun && pronounObject && identifiedProblem;
+const showFormulations = clientInitials && identifiedProblem;
 
     const replaceClientsIntitals = (text: string) => {
         return text.replace('[CLIENT]', clientInitials)
@@ -240,10 +238,6 @@ const showFormulations = clientInitials && possesivePronoun && pronounObject && 
                             return <span>{section.text && section.text.length > 1 ? " " + section.text :  section.text}</span>
                         case "CLIENT":
                             return <span> {clientInitials}</span>
-                        case "PRONOUN OBJECT":
-                            return <span> {pronounObject}</span>
-                        case "PRONOUN POSSESSIVE":
-                            return <span> {possesivePronoun}</span>
                         case "ISSUE":
                             return <span> {identifiedProblem}</span>
                         case "REPLACEMENT":
