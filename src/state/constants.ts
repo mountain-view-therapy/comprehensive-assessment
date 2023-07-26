@@ -361,8 +361,6 @@ export const initialState = {
             cognitiveFunctioning: "Oriented/Alert",
             functionalStatus: "Intact",
             interpersonal: "Interactive",
-
-
         },
         diagnostics: {
             diagnoses: [],

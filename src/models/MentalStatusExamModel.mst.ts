@@ -72,6 +72,19 @@ const MentalStatusExamModel = types.model('MentalStatusExamModel', {
         setFunctionalStatus(functionalStatus: FunctionalStatusStates): void {
             self.functionalStatus = functionalStatus
         },
+        reset(): void {
+            self.appearance = "Typical"
+            self.motorActivity = "Typical"
+            self.affect = "Appropriate"
+            self.mood = "Euthymic"
+            self.orientation = "X3: person, place and time"
+            self.memory = "Intact"
+            self.attention = "Good"
+            self.perception = "Typical"
+            self.cognitiveFunctioning = "Oriented/Alert"
+            self.functionalStatus = "Intact"
+            self.interpersonal = "Interactive"
+        }
     }
 })
 

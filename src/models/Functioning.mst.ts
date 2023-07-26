@@ -100,6 +100,23 @@ const FunctioningModel = types.model('SymptomsModel', {
         setOtherCommunitySymptoms(symptoms: string): void {
             self.otherCommunitySymptoms = symptoms
         },
+        reset(): void {
+            self.selfCareAffected =  false
+            self.selfCareSymptoms.clear()
+            self.otherSelfCareSymptoms = ""
+            self.occupationAffected = false
+            self.occupationSymptoms.clear()
+            self.otherOccupationSymptoms = ""
+            self.academicAffected = false
+            self.academicSymptoms.clear()
+            self.otherAcademicSymptoms = ""
+            self.interpersonalAffected = false
+            self.interpersonalSymptoms.clear()
+            self.otherInterpersonalSymptoms = ""
+            self.communitylAffected = false
+            self.communitySymptoms.clear()
+            self.otherCommunitySymptoms = ""
+        }
     }
 })
 

@@ -57,9 +57,21 @@ const QuestionaireRiskModel = types.model('QuestionaireRiskodel', {
         setOtherRiskInformation(plan: string): void {
             self.otherRiskInformation = plan
         },
-
-
-
+        reset(): void {
+            self.intakeReviewDate =  new Date()
+            self.commentOnIntakeQuestionare = ""
+            self.noRisk =  false
+            self.dangerToSelf = false
+            self.dangerToOthers =  false
+            self.otherRisk = false
+            self.dangerToSelfRisk = "Low"
+            self.dangerToOthersRisk = "Low"
+            self.dangerToSelfEvidence = ""
+            self.dangerToOthersEvidence = ""
+            self.dangerToSelfPlan = ""
+            self.dangerToOthersPlan = ""
+            self.otherRiskInformation = ""
+        }
 
     }
 })

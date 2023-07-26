@@ -13,9 +13,14 @@ const RootModel = types
         self.currentTab = tab
       },
       resetNoteState(): void {
-        const newState = ComprehensiveAssessmentModel.create(initialState.comprehensiveAssessment)
-        console.log(newState)
-        self.comprehensiveAssessment = newState
+        // const newState = ComprehensiveAssessmentModel.create(initialState.comprehensiveAssessment)
+        // console.log(newState)
+        // self.comprehensiveAssessment = newState
+
+        Object.keys(self).forEach(key => {
+          // @ts-ignore
+          self[key].reset && self[key].reset()
+        })
       },
     }
   })

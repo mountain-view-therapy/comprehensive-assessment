@@ -11,10 +11,10 @@ const DiagnosticModel = types.model('DiagnosticModel', {
 }).actions((self) => {
     return {
         addNewDiagnosis(): void {
-            self.diagnoses.push(DiagnosisModel.create({diagnosisName: possibleDiagnosis[0], otherDiagnosisName:"",otherSymptoms:""}))
+            self.diagnoses.push(DiagnosisModel.create({ diagnosisName: possibleDiagnosis[0], otherDiagnosisName: "", otherSymptoms: "" }))
         },
         removeDiagnosis(index: number): void {
-            self.diagnoses.splice(index,1)
+            self.diagnoses.splice(index, 1)
         },
         setDiagnoses(diagnosis: PossibleDiagnosis, index: number): void {
             self.diagnoses[index].diagnosisName = diagnosis
@@ -29,6 +29,9 @@ const DiagnosticModel = types.model('DiagnosticModel', {
         },
         setOtherSymptoms(diagnosesIndex: number, symptoms: string): void {
             self.diagnoses[diagnosesIndex].otherSymptoms = symptoms
+        },
+        reset(): void {
+            self.diagnoses.clear()
         },
     }
 })

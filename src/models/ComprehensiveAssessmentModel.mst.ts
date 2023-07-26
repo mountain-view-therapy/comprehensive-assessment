@@ -25,6 +25,16 @@ const ComprehensiveAssessmentModel = types.model('ComprehensiveAssessmentModel',
         setReplacementText(replacementText: string, formulationIndex: number, replacementTextIndex: number): void {
             self.formulations[formulationIndex].replacementText[replacementTextIndex] = replacementText
         },
+        reset() {
+            self.identifiedProblem = ""
+            self.clientInitials = ""
+            self.otherProgressions.clear()
+            self.formulations.forEach(formulation => formulation.reset())
+           Object.keys(self).forEach(key => {
+                // @ts-ignore
+                self[key].reset && self[key].reset()
+              })
+          },
     }
 })
 
