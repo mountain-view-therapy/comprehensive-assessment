@@ -263,19 +263,19 @@ export const possibleFormulations = [
     [
         { id1: uuid(), type: "CLIENT" },
         { id1: uuid(), type: "TEXT", text: "came to us wanting to change" },
-        { id1: uuid(), type: "PRONOUN POSSESSIVE" },
+        { id1: uuid(), type: "REPLACEMENT", prompt:"Pronoun", index: 0 },
         { id1: uuid(), type: "TEXT", text: "relationship with" },
         { id1: uuid(), type: "ISSUE" },
         { id1: uuid(), type: "TEXT", text: ", specifically how it was effecting" },
-        { id1: uuid(), type: "REPLACEMENT", prompt: "experience near description of how problem is effecting life", index: 0 },
+        { id1: uuid(), type: "REPLACEMENT", prompt: "experience near description of how problem is effecting life", index: 1 },
     ],
     [
         { id1: uuid(), type: "ISSUE" },
         { id1: uuid(), type: "TEXT", text: "has" },
         { id1: uuid(), type: "CLIENT" },
         { id1: uuid(), type: "TEXT", text: "thinking that" },
-        { id1: uuid(), type: "PRONOUN OBJECT" },
-        { id1: uuid(), type: "REPLACEMENT", prompt: "what does the problem have the person served thinking about themself", index: 0 },
+        { id1: uuid(), type: "REPLACEMENT", prompt: "Pronoun", index: 0 },
+        { id1: uuid(), type: "REPLACEMENT", prompt: "what does the problem have the person served thinking about themself", index: 1 },
     ],
     [
         { id1: uuid(), type: "CLIENT" },
@@ -302,7 +302,7 @@ export const possibleFormulations = [
         { id1: uuid(), type: "TEXT", text: "has" },
         { id1: uuid(), type: "REPLACEMENT", prompt: "list social supports", index: 0 },
         { id1: uuid(), type: "TEXT", text: "to help" },
-        { id1: uuid(), type: "PRONOUN OBJECT" },
+        { id1: uuid(), type: "REPLACEMENT", prompt: "Pronoun", index: 1 },
         { id1: uuid(), type: "TEXT", text: "stand up to" },
         { id1: uuid(), type: "ISSUE" },
         { id1: uuid(), type: "TEXT", text: "’s effects." },
@@ -316,7 +316,7 @@ export const possibleFormulations = [
     ],
     [
         { id1: uuid(), type: "TEXT", text: "We might also explore cultural discourses effecting" },
-        { id1: uuid(), type: "PRONOUN OBJECT" },
+        { id1: uuid(), type: "REPLACEMENT", prompt: "Pronoun", index: 0 },
         { id1: uuid(), type: "TEXT", text: "relationship with" },
         { id1: uuid(), type: "ISSUE" },
         { id1: uuid(), type: "TEXT", text: "." },
@@ -326,7 +326,7 @@ export const possibleFormulations = [
         { id1: uuid(), type: "TEXT", text: "seems committed to having a more preferred relationship with" },
         { id1: uuid(), type: "ISSUE" },
         { id1: uuid(), type: "TEXT", text: "to reduce the effects in" },
-        { id1: uuid(), type: "PRONOUN POSSESSIVE" },
+        { id1: uuid(), type: "REPLACEMENT", prompt: "Pronoun", index: 0 },
         { id1: uuid(), type: "TEXT", text: "life." },
     ]
 ]
