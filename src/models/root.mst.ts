@@ -1,5 +1,5 @@
-import { Instance, types, destroy, detach } from 'mobx-state-tree';
-import { initialState } from '../state/constants';
+import { Instance, types } from 'mobx-state-tree';
+
 import ComprehensiveAssessmentModel from './ComprehensiveAssessmentModel.mst';
 
 const RootModel = types

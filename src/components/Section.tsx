@@ -1,4 +1,4 @@
-import { TextField, Typography } from '@mui/material'
+import { Box, TextField } from '@mui/material'
 
 import { observer } from 'mobx-react-lite';
 import { useAppState } from '../state/provider';
@@ -27,7 +27,7 @@ const Section = ({ sections, index }: Props) => {
     } } = useAppState()
 
   return (
-    <Typography flexDirection='row' alignItems='center' justifyContent='flex-start' >
+    <Box >
       {
         sections.map((section: SectionType) => {
           switch (section.type) {
@@ -49,7 +49,7 @@ const Section = ({ sections, index }: Props) => {
               return null
           }
         })}
-    </Typography>
+    </Box>
   )
 }
 

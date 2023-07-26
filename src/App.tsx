@@ -106,9 +106,9 @@ const NoMatch = () => {
   return (
     <div>
       <h2>Nothing to see here!</h2>
-      <p>
+      <div>
         <Link to={'/questionaire-risk'}>Go to the home page</Link>
-      </p>
+      </div>
     </div >
   );
 }
