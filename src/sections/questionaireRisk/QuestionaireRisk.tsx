@@ -70,7 +70,7 @@ const QuestionaireRisk = () => {
 
         <TextField
           style={{ width: 540 }}
-          label='Comment in Intake Questionaire'
+          label='Comment on Intake Questionaire'
           multiline
           fullWidth
           rows={10}

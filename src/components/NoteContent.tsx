@@ -3,6 +3,7 @@ import timeZonePlugin from 'dayjs-ext/plugin/timeZone'
 import { observer } from "mobx-react-lite"
 import { useAppState } from "../state/provider"
 import { possibleFormulations } from "../state/constants"
+import sanitizeHtml from 'sanitize-html';
 
 const NoteContent = () => {
 
@@ -71,7 +72,7 @@ const showFormulations = clientInitials && identifiedProblem;
     return (
         <div>
             <div>Intake questionaire reviewed with {clientInitials} on {intakeReviewDate.toLocaleDateString()}.</div>
-            {commentOnIntakeQuestionare ? commentOnIntakeQuestionare : "No comments on questionaire."}
+            {commentOnIntakeQuestionare ? <p dangerouslySetInnerHTML={{ __html: sanitizeHtml(commentOnIntakeQuestionare.replace(/ /g, '&ensp;').replace(/\n/g, '<br />')) }} /> : "No comments on questionaire."}
 
 
             {(noRisk || dangerToOthers || dangerToSelf || otherRisk) &&
